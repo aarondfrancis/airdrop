@@ -31,6 +31,11 @@ class HashGenerator
      */
     public function generate()
     {
+        return md5(json_encode($this->asArray()));
+    }
+
+    public function asArray()
+    {
         $contents = [];
 
         foreach ($this->triggers as $class => $config) {
@@ -39,7 +44,7 @@ class HashGenerator
             $contents[$class] = app($class)->triggerBuildWhenChanged($config);
         }
 
-        return md5(json_encode($contents));
+        return $contents;
     }
 
     /**

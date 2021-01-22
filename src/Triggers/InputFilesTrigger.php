@@ -5,9 +5,11 @@
 
 namespace Hammerstone\Airdrop\Triggers;
 
+use Generator;
 use Illuminate\Support\Arr;
 use Hammerstone\Airdrop\FileSelection;
 use Hammerstone\Airdrop\Contracts\TriggerContract;
+use Illuminate\Support\Str;
 
 class InputFilesTrigger implements TriggerContract
 {
@@ -22,14 +24,15 @@ class InputFilesTrigger implements TriggerContract
     {
         $include = Arr::get($config, 'include', []);
         $exclude = Arr::get($config, 'exclude', []);
+        $trim = Arr::get($config, 'trim', '__nonexistent');
 
         return collect($this->files($include, $exclude))
             ->diff($exclude)
             ->unique()
             ->values()
-            ->mapWithKeys(function ($file) {
+            ->mapWithKeys(function ($file) use ($trim) {
                 return [
-                    $file => md5_file($file)
+                    Str::replaceFirst($trim, '', $file) => md5_file($file)
                 ];
             })
             ->toArray();
@@ -38,7 +41,7 @@ class InputFilesTrigger implements TriggerContract
     /**
      * @param $include
      * @param $exclude
-     * @return \Generator
+     * @return Generator
      */
     protected function files($include, $exclude)
     {

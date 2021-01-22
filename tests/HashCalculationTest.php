@@ -26,14 +26,23 @@ class HashCalculationTest extends TestCase
 
         config()->set('airdrop.triggers', [
             $filesTrigger => [
+                'trim' => realpath(__DIR__ . '/../'),
                 'include' => [
                     __DIR__ . '/Support/primary-webpack.mix.example',
                 ]
             ]
         ]);
 
+        $array = (new HashGenerator)->asArray();
+
+        $this->assertEquals([
+            "Hammerstone\Airdrop\Triggers\InputFilesTrigger" => [
+                "/tests/Support/primary-webpack.mix.example" => "62f6d1bfc836a1536c4869fe8f78249b"
+            ]
+        ], $array);
+
         $hash = (new HashGenerator)->generate();
 
-        $this->assertEquals('61e6e46a0b7bb21ba9225b9ddf7b7255', $hash);
+        $this->assertEquals('bf3e492980dd286b875ea06ce67de948', $hash);
     }
 }

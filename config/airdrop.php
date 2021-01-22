@@ -52,6 +52,11 @@ return [
          * Trigger a rebuild when files change.
          */
         InputFilesTrigger::class => [
+            /**
+             *
+             */
+            'trim' => base_path(),
+
             /*
              * Files or folders that should be included.
              */
