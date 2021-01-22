@@ -10,7 +10,7 @@ use Hammerstone\Airdrop\HashGenerator;
 use Hammerstone\Airdrop\AirdropServiceProvider;
 use Hammerstone\Airdrop\Triggers\InputFilesTrigger;
 
-class HashCalculationTest extends TestCase
+class HashCalculationTest extends BaseTest
 {
     protected function getPackageProviders($app)
     {
@@ -20,15 +20,13 @@ class HashCalculationTest extends TestCase
     }
 
     /** @test */
-    public function it_tests()
+    public function it_tests_basic_file_hash()
     {
-        $filesTrigger = InputFilesTrigger::class;
-
         config()->set('airdrop.triggers', [
-            $filesTrigger => [
-                'trim' => realpath(__DIR__ . '/../'),
+            InputFilesTrigger::class => [
+                'trim' => $this->basePath(),
                 'include' => [
-                    __DIR__ . '/Support/primary-webpack.mix.example',
+                    $this->basePath('tests/Support/primary-webpack.mix.example'),
                 ]
             ]
         ]);
@@ -36,7 +34,7 @@ class HashCalculationTest extends TestCase
         $array = (new HashGenerator)->asArray();
 
         $this->assertEquals([
-            "Hammerstone\Airdrop\Triggers\InputFilesTrigger" => [
+            InputFilesTrigger::class => [
                 "/tests/Support/primary-webpack.mix.example" => "62f6d1bfc836a1536c4869fe8f78249b"
             ]
         ], $array);

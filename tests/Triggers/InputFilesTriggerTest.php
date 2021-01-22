@@ -5,19 +5,17 @@
 
 namespace Hammerstone\Airdrop\Tests\Triggers;
 
-use Orchestra\Testbench\TestCase;
-use Hammerstone\Airdrop\HashGenerator;
-use Hammerstone\Airdrop\AirdropServiceProvider;
+use Hammerstone\Airdrop\Tests\BaseTest;
 use Hammerstone\Airdrop\Triggers\InputFilesTrigger;
 
-class InputFilesTriggerTest extends TestCase
+class InputFilesTriggerTest extends BaseTest
 {
     /** @test */
     public function the_hashes_are_stable()
     {
         $config = [
             'include' => [
-                dirname(__DIR__) . '/Support/primary-webpack.mix.example'
+                $this->basePath('tests/Support/primary-webpack.mix.example')
             ]
         ];
 
@@ -31,7 +29,7 @@ class InputFilesTriggerTest extends TestCase
     {
         $config = [
             'include' => [
-                dirname(__DIR__) . '/Support/secondary-webpack.mix.example'
+                $this->basePath('tests/Support/secondary-webpack.mix.example')
             ]
         ];
 
@@ -45,8 +43,8 @@ class InputFilesTriggerTest extends TestCase
     {
         $config = [
             'include' => [
-                dirname(__DIR__) . '/Support/primary-webpack.mix.example',
-                dirname(__DIR__) . '/Support/secondary-webpack.mix.example'
+                $this->basePath('tests/Support/primary-webpack.mix.example'),
+                $this->basePath('tests/Support/secondary-webpack.mix.example'),
             ]
         ];
 
@@ -61,11 +59,11 @@ class InputFilesTriggerTest extends TestCase
     {
         $config = [
             'include' => [
-                dirname(__DIR__) . '/Support/primary-webpack.mix.example',
-                dirname(__DIR__) . '/Support/secondary-webpack.mix.example'
+                $this->basePath('tests/Support/primary-webpack.mix.example'),
+                $this->basePath('tests/Support/secondary-webpack.mix.example')
             ],
             'exclude' => [
-                dirname(__DIR__) . '/Support/secondary-webpack.mix.example'
+                $this->basePath('tests/Support/secondary-webpack.mix.example')
             ]
         ];
 

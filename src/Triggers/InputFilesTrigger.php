@@ -9,7 +9,6 @@ use Generator;
 use Illuminate\Support\Arr;
 use Hammerstone\Airdrop\FileSelection;
 use Hammerstone\Airdrop\Contracts\TriggerContract;
-use Illuminate\Support\Str;
 
 class InputFilesTrigger implements TriggerContract
 {
@@ -32,7 +31,8 @@ class InputFilesTrigger implements TriggerContract
             ->values()
             ->mapWithKeys(function ($file) use ($trim) {
                 return [
-                    Str::replaceFirst($trim, '', $file) => md5_file($file)
+                    // Trim the first part of the path off if the user has requested it.
+                    preg_replace('/^' . preg_quote($trim, '/') . '/i', '', $file) => md5_file($file)
                 ];
             })
             ->toArray();
