@@ -25,11 +25,11 @@ class HashCalculationTest extends TestCase
         $filesTrigger = InputFilesTrigger::class;
 
         config()->set("airdrop.triggers.$filesTrigger.include", [
-            __DIR__,
-            __DIR__ . '/Support/webpack.mix.example'
+            __DIR__ . '/Support/primary-webpack.mix.example',
         ]);
 
-        dump((new HashGenerator(config('airdrop')))->hash());
-    }
+        $hash = (new HashGenerator(config('airdrop')))->generate();
 
+        $this->assertEquals('0abf20361a1fcbd930f0f2a1b80ba9b9', $hash);
+    }
 }

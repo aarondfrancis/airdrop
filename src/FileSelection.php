@@ -102,16 +102,30 @@ class FileSelection
 
     protected function includedFiles()
     {
-        return $this->includeFilesAndDirectories->filter(function ($path) {
-            return is_file($path);
-        })->toArray();
+        return $this->includeFilesAndDirectories
+            ->each(function ($path) {
+                if (!is_file($path) && !is_dir($path)) {
+                    throw new \Exception($path . ' is neither a file nor a directory.');
+                }
+            })
+            ->filter(function ($path) {
+                return is_file($path);
+            })
+            ->toArray();
     }
 
     protected function includedDirectories()
     {
-        return $this->includeFilesAndDirectories->reject(function ($path) {
-            return is_file($path);
-        })->toArray();
+        return $this->includeFilesAndDirectories
+            ->each(function ($path) {
+                if (!is_file($path) && !is_dir($path)) {
+                    throw new \Exception($path . ' is neither a file nor a directory.');
+                }
+            })
+            ->reject(function ($path) {
+                return is_file($path);
+            })
+            ->toArray();
     }
 
     protected function shouldExclude(string $path): bool

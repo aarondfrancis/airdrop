@@ -36,7 +36,7 @@ class HashGenerator
         foreach ($this->triggers as $class => $config) {
             $this->ensureContractImplemented($class);
 
-            $contents[$class] = app($class)->triggerWhenChanged($config);
+            $contents[$class] = app($class)->triggerBuildWhenChanged($config);
         }
 
         return md5(json_encode($contents));
