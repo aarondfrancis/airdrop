@@ -15,7 +15,7 @@ class InputFilesTriggerTest extends BaseTest
     {
         $config = [
             'include' => [
-                $this->basePath('tests/Support/primary-webpack.mix.example')
+                base_path('tests/Support/primary-webpack.mix.example')
             ]
         ];
 
@@ -29,7 +29,7 @@ class InputFilesTriggerTest extends BaseTest
     {
         $config = [
             'include' => [
-                $this->basePath('tests/Support/secondary-webpack.mix.example')
+                base_path('tests/Support/secondary-webpack.mix.example')
             ]
         ];
 
@@ -43,8 +43,8 @@ class InputFilesTriggerTest extends BaseTest
     {
         $config = [
             'include' => [
-                $this->basePath('tests/Support/primary-webpack.mix.example'),
-                $this->basePath('tests/Support/secondary-webpack.mix.example'),
+                base_path('tests/Support/primary-webpack.mix.example'),
+                base_path('tests/Support/secondary-webpack.mix.example'),
             ]
         ];
 
@@ -59,11 +59,11 @@ class InputFilesTriggerTest extends BaseTest
     {
         $config = [
             'include' => [
-                $this->basePath('tests/Support/primary-webpack.mix.example'),
-                $this->basePath('tests/Support/secondary-webpack.mix.example')
+                base_path('tests/Support/primary-webpack.mix.example'),
+                base_path('tests/Support/secondary-webpack.mix.example')
             ],
             'exclude' => [
-                $this->basePath('tests/Support/secondary-webpack.mix.example')
+                base_path('tests/Support/secondary-webpack.mix.example')
             ]
         ];
 

@@ -1,33 +1,32 @@
 <?php
 
-use Hammerstone\Airdrop\FilesystemDriver;
+use Hammerstone\Airdrop\Drivers\FilesystemDriver;
 use Hammerstone\Airdrop\Triggers\ConfigTrigger;
 use Hammerstone\Airdrop\Triggers\InputFilesTrigger;
 
 return [
-
     // The driver you wish to use to stash and restore your files.
-    'driver' => env('AIRDROP_DRIVER', 'filesystem'),
+    'driver' => env('AIRDROP_DRIVER', 'default'),
 
     'drivers' => [
-        'filesystem' => [
+        'default' => [
             // The class responsible for implementing the stash and restore
-            // logic. Must implement StashAndRestoreDriverContract.
+            // logic. Must extend BaseDriver.
             'class' => FilesystemDriver::class,
 
             // The disk on which to store the built files.
             'disk' => env('AIRDROP_REMOTE_DISK', 's3'),
 
             // The folder (if any) where you'd like your stashed assets to reside.
-            'remote_directory' => env('AIRDROP_REMOTE_DIR', 'airdrop/'),
-
-            // Clean old artifact ZIPs so your drive isn't cluttered up
-            // with old useless files. Set to 0 to disable completely.
-            'clean_artifacts_after_days' => 30,
+            'remote_directory' => env('AIRDROP_REMOTE_DIR', 'airdrop'),
 
             // A writeable directory on the machine that builds the assets.
             // Used to build up the ZIP file before stashing it.
-            'local_tmp_directory' => env('AIRDROP_LOCAL_TMP_DIR', storage_path()),
+            'local_tmp_directory' => env('AIRDROP_LOCAL_TMP_DIR', storage_path('framework')),
+
+            // The skip file is an empty file that will be created to
+            // indicate that asset building can be skipped.
+            'skip_file' => env('AIRDROP_SKIP_FILE', base_path('.airdrop_skip')),
         ]
     ],
 
@@ -52,11 +51,6 @@ return [
          * Trigger a rebuild when files change.
          */
         InputFilesTrigger::class => [
-            /**
-             *
-             */
-            'trim' => base_path(),
-
             /*
              * Files or folders that should be included.
              */

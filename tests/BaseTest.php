@@ -5,21 +5,31 @@
 
 namespace Hammerstone\Airdrop\Tests;
 
-use Illuminate\Support\Str;
+use Hammerstone\Airdrop\AirdropServiceProvider;
+use Illuminate\Support\Facades\File;
 use Orchestra\Testbench\TestCase;
 
 abstract class BaseTest extends TestCase
 {
-    /**
-     * Mimic the base_path helper from Laravel.
-     *
-     * @param string $path
-     * @return string
-     */
-    public function basePath($path = '')
+    protected function getPackageProviders($app)
     {
-        $dir = Str::before(base_path(), '/vendor');
-
-        return $path ? $dir . '/' . $path : $dir;
+        return [
+            AirdropServiceProvider::class
+        ];
     }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+
+        File::deleteDirectory(base_path('storage'));
+    }
+
+    protected function getBasePath()
+    {
+        // By default base_path points to the TestBench directory,
+        // we want it to point to the root of our package.
+        return dirname(__DIR__);
+    }
+
 }

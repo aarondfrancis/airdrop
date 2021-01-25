@@ -12,6 +12,11 @@ class HashGenerator
 {
     protected $triggers = [];
 
+    public static function make()
+    {
+        return new static;
+    }
+
     public function __construct()
     {
         foreach (config('airdrop.triggers') as $class => $config) {
@@ -34,6 +39,10 @@ class HashGenerator
         return md5(json_encode($this->asArray()));
     }
 
+    /**
+     * @return array
+     * @throws Exception
+     */
     public function asArray()
     {
         $contents = [];

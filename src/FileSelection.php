@@ -23,23 +23,23 @@ class FileSelection
     protected $shouldFollowLinks = false;
 
     /**
-     * @param array|string $includeFilesAndDirectories
-     *
+     * @param array $include
+     * @param array $exclude
      * @return FileSelection
      */
-    public static function create($includeFilesAndDirectories = [])
+    public static function create($include = [], $exclude = [])
     {
-        return new static($includeFilesAndDirectories);
+        return new static($include, $exclude);
     }
 
     /**
-     * @param array|string $includeFilesAndDirectories
+     * @param array $include
+     * @param array $exclude
      */
-    public function __construct($includeFilesAndDirectories = [])
+    public function __construct($include = [], $exclude = [])
     {
-        $this->includeFilesAndDirectories = collect($includeFilesAndDirectories);
-
-        $this->excludeFilesAndDirectories = collect();
+        $this->includeFilesAndDirectories = collect($include);
+        $this->excludeFilesAndDirectories = collect($exclude);
     }
 
     /**
@@ -63,10 +63,15 @@ class FileSelection
         return $this;
     }
 
+    public function selected()
+    {
+        return collect($this->yieldSelectedFiles())->diff($this->excludeFilesAndDirectories);
+    }
+
     /**
      * @return \Generator|string[]
      */
-    public function selectedFiles()
+    protected function yieldSelectedFiles()
     {
         if ($this->includeFilesAndDirectories->isEmpty()) {
             return [];

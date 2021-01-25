@@ -5,8 +5,9 @@
 
 namespace Hammerstone\Airdrop;
 
-use Hammerstone\Airdrop\Commands\Restore;
-use Hammerstone\Airdrop\Commands\Stash;
+use Hammerstone\Airdrop\Commands\Install;
+use Hammerstone\Airdrop\Commands\Download;
+use Hammerstone\Airdrop\Commands\Upload;
 use Illuminate\Support\ServiceProvider;
 
 class AirdropServiceProvider extends ServiceProvider
@@ -15,8 +16,9 @@ class AirdropServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                Restore::class,
-                Stash::class
+                Install::class,
+                Download::class,
+                Upload::class
             ]);
         }
 

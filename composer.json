@@ -32,7 +32,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "AirdropServiceProvider"
+                "Hammerstone\\Airdrop\\AirdropServiceProvider"
             ]
         }
     }
