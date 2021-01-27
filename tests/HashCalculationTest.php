@@ -34,6 +34,6 @@ class HashCalculationTest extends BaseTest
 
         $hash = (new HashGenerator)->generate();
 
-        $this->assertEquals('bf3e492980dd286b875ea06ce67de948', $hash);
+        $this->assertEquals('36eda7109ca99a5fb55cffefeca3c554', $hash);
     }
 }

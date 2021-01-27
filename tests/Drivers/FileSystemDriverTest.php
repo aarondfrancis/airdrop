@@ -37,7 +37,7 @@ class FileSystemDriverTest extends BaseTest
 
         $this->artisan('airdrop:upload');
 
-        Storage::disk('s3')->assertExists('airdrop/airdrop-bf3e492980dd286b875ea06ce67de948.zip');
+        Storage::disk('s3')->assertExists('airdrop/airdrop-36eda7109ca99a5fb55cffefeca3c554.zip');
     }
 
     /** @test */
