@@ -2,7 +2,7 @@
 
 use Hammerstone\Airdrop\Drivers\FilesystemDriver;
 use Hammerstone\Airdrop\Triggers\ConfigTrigger;
-use Hammerstone\Airdrop\Triggers\InputFilesTrigger;
+use Hammerstone\Airdrop\Triggers\FileTrigger;
 
 return [
     // The driver you wish to use to stash and restore your files.
@@ -50,7 +50,7 @@ return [
         /*
          * Trigger a rebuild when files change.
          */
-        InputFilesTrigger::class => [
+        FileTrigger::class => [
             /*
              * Files or folders that should be included.
              */

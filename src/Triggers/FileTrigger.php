@@ -11,7 +11,7 @@ use Hammerstone\Airdrop\FileSelection;
 use Hammerstone\Airdrop\Contracts\TriggerContract;
 use Illuminate\Support\Facades\File;
 
-class InputFilesTrigger implements TriggerContract
+class FileTrigger implements TriggerContract
 {
     /**
      * Return any state that should be considered when determining

@@ -6,7 +6,7 @@
 namespace Hammerstone\Airdrop\Tests\Drivers;
 
 use Hammerstone\Airdrop\Tests\BaseTest;
-use Hammerstone\Airdrop\Triggers\InputFilesTrigger;
+use Hammerstone\Airdrop\Triggers\FileTrigger;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,7 +17,7 @@ class FileSystemDriverTest extends BaseTest
         Storage::fake('s3');
 
         config()->set('airdrop.triggers', [
-            InputFilesTrigger::class => [
+            FileTrigger::class => [
                 'trim' => base_path(),
                 'include' => [
                     base_path('tests/Support/primary-webpack.mix.example'),
