@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Aaron Francis <aarondfrancis@gmail.com|https://twitter.com/aarondfrancis>
+ * @author Aaron Francis <aaron@hammerstone.dev|https://twitter.com/aarondfrancis>
  */
 
 namespace Hammerstone\Airdrop\Tests;

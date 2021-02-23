@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Aaron Francis <aarondfrancis@gmail.com>
+ * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
 namespace Hammerstone\Airdrop\Contracts;
