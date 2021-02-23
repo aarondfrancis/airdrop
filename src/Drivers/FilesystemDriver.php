@@ -26,12 +26,17 @@ class FilesystemDriver extends BaseDriver
         if ($this->exists()) {
             // This exact configuration of assets is already stashed,
             // so we don't need to do it again.
+            $this->output('Files already exist on remote storage, not uploading.');
             return;
         }
 
         $zipPath = $this->localStashPath() . $this->stashedPackageFilename();
 
+        $this->output('Making zip file at ' . $zipPath);
+
         $this->makeZip($zipPath);
+
+        $this->output('Uploading to remote disk at ' . $this->remoteStashPath() . $this->stashedPackageFilename());
 
         $this->disk()->putFileAs(
             $this->remoteStashPath(),
@@ -74,12 +79,16 @@ class FilesystemDriver extends BaseDriver
      */
     public function download()
     {
-        $this->extract()
+        if ($this->extract()) {
+            $this->output('Assets downloaded and extracted.');
             // Touch a file that can be used to inform the deploy
             // process that building assets can be skipped.
-            ? File::put($this->skipFilePath(), '')
+            File::put($this->skipFilePath(), '');
+        } else {
+            $this->output('Assets did not exist.');
             // Remove the file if extraction did not succeed.
-            : File::delete($this->skipFilePath());
+            File::delete($this->skipFilePath());
+        }
     }
 
     public function extract()

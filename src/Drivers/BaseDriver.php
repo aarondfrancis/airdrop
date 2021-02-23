@@ -35,6 +35,13 @@ abstract class BaseDriver
         return $this;
     }
 
+    public function output($line)
+    {
+        if (config('airdrop.verbose')) {
+            echo "[Airdrop] $line\n";
+        }
+    }
+
     abstract public function download();
 
     abstract public function upload();
