@@ -1,5 +1,5 @@
 /vendor
-/storage
+/storage/framework/testing
 .env
 .phpunit.result.cache
 npm-debug.log

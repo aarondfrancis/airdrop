@@ -22,7 +22,7 @@ abstract class BaseTest extends TestCase
     {
         parent::tearDown();
 
-        File::deleteDirectory(base_path('storage'));
+        File::deleteDirectory(base_path('storage/framework/testing'));
     }
 
     protected function getBasePath()
