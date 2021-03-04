@@ -14,7 +14,7 @@ This will take care of downloading and uploading your assets, should that be req
 Once you're done, your asset step will look something like this:
 
 ```bash
-php artisan airdop:download
+php artisan airdrop:download
 npm run production
 php artisan airdrop:upload
 ```
