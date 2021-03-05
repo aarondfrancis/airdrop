@@ -5,6 +5,7 @@
 
 namespace Hammerstone\Airdrop;
 
+use Hammerstone\Airdrop\Commands\Debug;
 use Hammerstone\Airdrop\Commands\Install;
 use Hammerstone\Airdrop\Commands\Download;
 use Hammerstone\Airdrop\Commands\Upload;
@@ -18,7 +19,8 @@ class AirdropServiceProvider extends ServiceProvider
             $this->commands([
                 Install::class,
                 Download::class,
-                Upload::class
+                Upload::class,
+                Debug::class
             ]);
         }
 

@@ -18,6 +18,7 @@
                 "Filesystem": "/drivers/filesystem",
                 "Custom": "/drivers/custom"
             }
-        }
+        },
+        "Debugging": "/debugging"
     }
 }
