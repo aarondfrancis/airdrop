@@ -32,29 +32,28 @@ The `outputs` section of the config file defines which files are generated as th
 config/airdrop.php{.filename}
 ```php
 [
-        // ...
-       'outputs' => [
-        /*
-         * Files or folders that should be included.
-         */
-        'include' => [
-            // The mix-manifest file tells Laravel how to get your versioned assets.
-            public_path('mix-manifest.json'),
+    // ...
+   'outputs' => [
+    /*
+     * Files or folders that should be included.
+     */
+    'include' => [
+        // The mix-manifest file tells Laravel how to get your versioned assets.
+        public_path('mix-manifest.json'),
 
-            // Compiled CSS.
-            public_path('css'),
+        // Compiled CSS.
+        public_path('css'),
 
-            // Compiled JS.
-            public_path('js'),
-        ],
+        // Compiled JS.
+        public_path('js'),
+    ],
 
-        /*
-         * Files or folders that should be excluded or ignored.
-         */
-        'exclude' => [
-            //
-        ],
-    ]
+    /*
+     * Files or folders that should be excluded or ignored.
+     */
+    'exclude' => [
+        //
+    ],
 ];
 ```
 

@@ -2,12 +2,12 @@
 # Installation
 
 You can install the package via Composer
-```console
+```text
 composer require hammerstone/airdrop
 ```
 
 Once the package is installed, you may optionally publish the config file by running 
-```console
+```text
 php artisan airdrop:install
 ```
 

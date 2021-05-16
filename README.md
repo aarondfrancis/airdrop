@@ -1,6 +1,6 @@
 # Airdrop for Laravel
 
-[![Tests](https://github.com/hammerstonehq/airdrop/actions/workflows/tests.yml/badge.svg)](https://github.com/hammerstonehq/airdrop/actions/workflows/tests.yml)
+[![Tests](https://github.com/hammerstonehq/airdrop/actions/workflows/tests.yml/badge.svg)](https://github.com/hammerstonehq/airdrop/actions/workflows/tests.yml) [![Latest Stable Version](https://poser.pugx.org/hammerstone/airdrop/v)](//packagist.org/packages/hammerstone/airdrop) [![Total Downloads](https://poser.pugx.org/hammerstone/airdrop/downloads)](//packagist.org/packages/hammerstone/airdrop) [![License](https://poser.pugx.org/hammerstone/airdrop/license)](//packagist.org/packages/hammerstone/airdrop)
 
 > Read the full docs at [hammerstone.dev/airdrop/docs](https://hammerstone.dev/airdrop/docs/main/overview).
 
