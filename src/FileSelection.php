@@ -3,6 +3,7 @@
 /**
  * @author Spatie bvba info@spatie.be
  * @license MIT
+ *
  * @see https://github.com/spatie/laravel-backup/blob/master/src/Tasks/Backup/FileSelection.php
  */
 
@@ -25,6 +26,7 @@ class FileSelection
     /**
      * @param array $include
      * @param array $exclude
+     *
      * @return FileSelection
      */
     public static function create($include = [], $exclude = [])
@@ -110,7 +112,7 @@ class FileSelection
         return $this->includeFilesAndDirectories
             ->each(function ($path) {
                 if (!is_file($path) && !is_dir($path)) {
-                    throw new \Exception($path . ' is neither a file nor a directory.');
+                    throw new \Exception($path.' is neither a file nor a directory.');
                 }
             })
             ->filter(function ($path) {
@@ -124,7 +126,7 @@ class FileSelection
         return $this->includeFilesAndDirectories
             ->each(function ($path) {
                 if (!is_file($path) && !is_dir($path)) {
-                    throw new \Exception($path . ' is neither a file nor a directory.');
+                    throw new \Exception($path.' is neither a file nor a directory.');
                 }
             })
             ->reject(function ($path) {

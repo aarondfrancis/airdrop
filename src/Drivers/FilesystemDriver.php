@@ -27,16 +27,17 @@ class FilesystemDriver extends BaseDriver
             // This exact configuration of assets is already stashed,
             // so we don't need to do it again.
             $this->output('Files already exist on remote storage, not uploading.');
+
             return;
         }
 
-        $zipPath = $this->localStashPath() . $this->stashedPackageFilename();
+        $zipPath = $this->localStashPath().$this->stashedPackageFilename();
 
-        $this->output('Making zip file at ' . $zipPath);
+        $this->output('Making zip file at '.$zipPath);
 
         $this->makeZip($zipPath);
 
-        $this->output('Uploading to remote disk at ' . $this->remoteStashPath() . $this->stashedPackageFilename());
+        $this->output('Uploading to remote disk at '.$this->remoteStashPath().$this->stashedPackageFilename());
 
         $this->disk()->putFileAs(
             $this->remoteStashPath(),
@@ -50,17 +51,18 @@ class FilesystemDriver extends BaseDriver
 
     /**
      * @param $path
+     *
      * @throws Exception
      */
     public function makeZip($path)
     {
-        $zip = new ZipArchive;
+        $zip = new ZipArchive();
 
         // Open a zip file to put all the files in.
         $opened = $zip->open($path, ZipArchive::CREATE);
 
         if ($opened !== true) {
-            throw new Exception('Airdrop is trying to stash assets, but was unable to open a zip at ' . json_encode($path));
+            throw new Exception('Airdrop is trying to stash assets, but was unable to open a zip at '.json_encode($path));
         }
 
         $files = $this->files();
@@ -97,20 +99,20 @@ class FilesystemDriver extends BaseDriver
             return false;
         }
 
-        $zipPath = $this->localStashPath() . $this->stashedPackageFilename();
+        $zipPath = $this->localStashPath().$this->stashedPackageFilename();
 
         // Download the file to local disk as a stream.
         File::put(
             $zipPath,
-            $this->disk()->readStream($this->remoteStashPath() . $this->stashedPackageFilename())
+            $this->disk()->readStream($this->remoteStashPath().$this->stashedPackageFilename())
         );
 
-        $zip = new ZipArchive;
+        $zip = new ZipArchive();
 
         $status = $zip->open($zipPath);
 
         if ($status !== true) {
-            throw new Exception('Airdrop was trying to extract previously built assets, but could not open the zip file at ' . json_encode($zipPath));
+            throw new Exception('Airdrop was trying to extract previously built assets, but could not open the zip file at '.json_encode($zipPath));
         }
 
         // Put all the assets back where they should be.
@@ -149,7 +151,7 @@ class FilesystemDriver extends BaseDriver
      */
     public function exists()
     {
-        return $this->disk()->exists($this->remoteStashPath() . $this->stashedPackageFilename());
+        return $this->disk()->exists($this->remoteStashPath().$this->stashedPackageFilename());
     }
 
     /**

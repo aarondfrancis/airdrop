@@ -6,9 +6,9 @@
 namespace Hammerstone\Airdrop\Triggers;
 
 use Generator;
-use Illuminate\Support\Arr;
-use Hammerstone\Airdrop\FileSelection;
 use Hammerstone\Airdrop\Contracts\TriggerContract;
+use Hammerstone\Airdrop\FileSelection;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 
 class FileTrigger implements TriggerContract
@@ -18,6 +18,7 @@ class FileTrigger implements TriggerContract
      * whether or not your build process needs to run again.
      *
      * @param array $config
+     *
      * @return array
      */
     public function triggerBuildWhenChanged($config = [])
@@ -33,7 +34,7 @@ class FileTrigger implements TriggerContract
                 return [
                     // trim the base path off, making everything
                     // relative to the project root.
-                    preg_replace('/^' . preg_quote(base_path(), '/') . '/i', '', $file) => File::hash($file)
+                    preg_replace('/^'.preg_quote(base_path(), '/').'/i', '', $file) => File::hash($file),
                 ];
             })
             ->toArray();
@@ -42,11 +43,11 @@ class FileTrigger implements TriggerContract
     /**
      * @param $include
      * @param $exclude
+     *
      * @return Generator
      */
     protected function files($include, $exclude)
     {
         return FileSelection::create($include, $exclude)->selected();
     }
-
 }

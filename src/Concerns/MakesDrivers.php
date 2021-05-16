@@ -5,7 +5,6 @@
 
 namespace Hammerstone\Airdrop\Concerns;
 
-
 use Exception;
 use Hammerstone\Airdrop\Drivers\BaseDriver;
 use Hammerstone\Airdrop\HashGenerator;
@@ -14,8 +13,9 @@ use Illuminate\Support\Arr;
 trait MakesDrivers
 {
     /**
-     * @return BaseDriver
      * @throws Exception
+     *
+     * @return BaseDriver
      */
     public function makeDriver()
     {
@@ -42,12 +42,13 @@ trait MakesDrivers
 
     /**
      * @param $driver
+     *
      * @throws Exception
      */
     protected function ensureDriverExtendsBase($driver)
     {
         if (!is_subclass_of($driver, BaseDriver::class)) {
-            throw new Exception('Airdrop drivers must extend ' . json_encode(BaseDriver::class));
+            throw new Exception('Airdrop drivers must extend '.json_encode(BaseDriver::class));
         }
     }
 }

@@ -5,7 +5,6 @@
 
 namespace Hammerstone\Airdrop\Contracts;
 
-
 interface TriggerContract
 {
     /**
@@ -13,8 +12,8 @@ interface TriggerContract
      * whether or not your build process needs to run again.
      *
      * @param array $config
+     *
      * @return array
      */
     public function triggerBuildWhenChanged($config = []);
-
 }

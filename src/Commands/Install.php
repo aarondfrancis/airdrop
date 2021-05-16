@@ -13,12 +13,14 @@ class Install extends Command
 {
     /**
      * The name and signature of the console command.
+     *
      * @var string
      */
     protected $signature = 'airdrop:install';
 
     /**
      * The console command description.
+     *
      * @var string
      */
     protected $description = 'Install the Airdrop config file into your app.';
@@ -37,11 +39,10 @@ class Install extends Command
      */
     public function handle()
     {
-        Artisan::call("vendor:publish", [
-            '--provider' => AirdropServiceProvider::class
+        Artisan::call('vendor:publish', [
+            '--provider' => AirdropServiceProvider::class,
         ]);
 
         $this->info('Config file published!');
     }
-
 }

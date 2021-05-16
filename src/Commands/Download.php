@@ -19,10 +19,9 @@ class Download extends Command
     public function handle()
     {
         config([
-            'airdrop.verbose' => $this->option('verbose')
+            'airdrop.verbose' => $this->option('verbose'),
         ]);
 
         $this->makeDriver()->download();
     }
-
 }

@@ -14,6 +14,7 @@ class ConfigTrigger implements TriggerContract
      * whether or not your build process needs to run again.
      *
      * @param array $config
+     *
      * @return array
      */
     public function triggerBuildWhenChanged($config = [])

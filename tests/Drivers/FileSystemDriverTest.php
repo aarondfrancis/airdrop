@@ -18,15 +18,15 @@ class FileSystemDriverTest extends BaseTest
 
         config()->set('airdrop.triggers', [
             FileTrigger::class => [
-                'trim' => base_path(),
+                'trim'    => base_path(),
                 'include' => [
                     base_path('tests/Support/primary-webpack.mix.example'),
-                ]
-            ]
+                ],
+            ],
         ]);
 
         config()->set('airdrop.outputs.include', [
-            base_path('tests/Support/public')
+            base_path('tests/Support/public'),
         ]);
     }
 

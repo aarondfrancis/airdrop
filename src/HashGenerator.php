@@ -14,7 +14,7 @@ class HashGenerator
 
     public static function make()
     {
-        return new static;
+        return new static();
     }
 
     public function __construct()
@@ -31,8 +31,9 @@ class HashGenerator
     }
 
     /**
-     * @return string
      * @throws Exception
+     *
+     * @return string
      */
     public function generate()
     {
@@ -40,8 +41,9 @@ class HashGenerator
     }
 
     /**
-     * @return array
      * @throws Exception
+     *
+     * @return array
      */
     public function asArray()
     {
@@ -58,12 +60,13 @@ class HashGenerator
 
     /**
      * @param $class
+     *
      * @throws Exception
      */
     protected function ensureContractImplemented($class)
     {
         if (!array_key_exists(TriggerContract::class, class_implements($class))) {
-            throw new Exception('Airdrop triggers must implement contract ' . json_encode(TriggerContract::class));
+            throw new Exception('Airdrop triggers must implement contract '.json_encode(TriggerContract::class));
         }
     }
 }

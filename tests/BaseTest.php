@@ -14,7 +14,7 @@ abstract class BaseTest extends TestCase
     protected function getPackageProviders($app)
     {
         return [
-            AirdropServiceProvider::class
+            AirdropServiceProvider::class,
         ];
     }
 
@@ -31,5 +31,4 @@ abstract class BaseTest extends TestCase
         // we want it to point to the root of our package.
         return dirname(__DIR__);
     }
-
 }

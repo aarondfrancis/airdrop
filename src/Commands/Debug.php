@@ -28,5 +28,4 @@ class Debug extends Command
             json_encode($output, JSON_PRETTY_PRINT)
         );
     }
-
 }

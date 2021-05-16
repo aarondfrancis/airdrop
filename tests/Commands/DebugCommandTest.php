@@ -15,14 +15,14 @@ class DebugCommandTest extends BaseTest
     {
         config()->set('airdrop.triggers', [
             ConfigTrigger::class => [
-                'env' => 'testing'
+                'env' => 'testing',
             ],
             FileTrigger::class => [
-                'trim' => base_path(),
+                'trim'    => base_path(),
                 'include' => [
                     base_path('tests/Support/primary-webpack.mix.example'),
-                ]
-            ]
+                ],
+            ],
         ]);
     }
 
@@ -45,7 +45,6 @@ EOT;
             ->assertExitCode(0);
     }
 
-
     /** @test */
     public function test_single_trigger()
     {
@@ -61,6 +60,4 @@ EOT;
             ->expectsOutput($expected)
             ->assertExitCode(0);
     }
-
-
 }
