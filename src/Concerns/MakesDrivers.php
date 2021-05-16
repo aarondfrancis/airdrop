@@ -5,7 +5,6 @@
 
 namespace Hammerstone\Airdrop\Concerns;
 
-
 use Exception;
 use Hammerstone\Airdrop\Drivers\BaseDriver;
 use Hammerstone\Airdrop\HashGenerator;

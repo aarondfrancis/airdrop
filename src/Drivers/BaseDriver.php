@@ -45,6 +45,4 @@ abstract class BaseDriver
     abstract public function download();
 
     abstract public function upload();
-
-
 }

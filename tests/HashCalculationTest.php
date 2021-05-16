@@ -5,14 +5,11 @@
 
 namespace Hammerstone\Airdrop\Tests;
 
-use Orchestra\Testbench\TestCase;
 use Hammerstone\Airdrop\HashGenerator;
-use Hammerstone\Airdrop\AirdropServiceProvider;
 use Hammerstone\Airdrop\Triggers\FileTrigger;
 
 class HashCalculationTest extends BaseTest
 {
-
     /** @test */
     public function it_tests_basic_file_hash()
     {
@@ -28,7 +25,7 @@ class HashCalculationTest extends BaseTest
 
         $this->assertEquals([
             FileTrigger::class => [
-                "/tests/Support/primary-webpack.mix.example" => "62f6d1bfc836a1536c4869fe8f78249b"
+                '/tests/Support/primary-webpack.mix.example' => '62f6d1bfc836a1536c4869fe8f78249b'
             ]
         ], $array);
 

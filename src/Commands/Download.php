@@ -24,5 +24,4 @@ class Download extends Command
 
         $this->makeDriver()->download();
     }
-
 }

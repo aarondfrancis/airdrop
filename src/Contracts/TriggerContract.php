@@ -5,7 +5,6 @@
 
 namespace Hammerstone\Airdrop\Contracts;
 
-
 interface TriggerContract
 {
     /**
@@ -16,5 +15,4 @@ interface TriggerContract
      * @return array
      */
     public function triggerBuildWhenChanged($config = []);
-
 }

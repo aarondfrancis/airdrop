@@ -6,9 +6,9 @@
 namespace Hammerstone\Airdrop\Triggers;
 
 use Generator;
-use Illuminate\Support\Arr;
-use Hammerstone\Airdrop\FileSelection;
 use Hammerstone\Airdrop\Contracts\TriggerContract;
+use Hammerstone\Airdrop\FileSelection;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 
 class FileTrigger implements TriggerContract
@@ -48,5 +48,4 @@ class FileTrigger implements TriggerContract
     {
         return FileSelection::create($include, $exclude)->selected();
     }
-
 }

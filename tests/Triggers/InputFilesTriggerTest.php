@@ -72,5 +72,4 @@ class InputFilesTriggerTest extends BaseTest
         $this->assertCount(1, $hashes);
         $this->assertEquals('62f6d1bfc836a1536c4869fe8f78249b', array_values($hashes)[0]);
     }
-
 }
