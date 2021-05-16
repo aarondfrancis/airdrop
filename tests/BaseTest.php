@@ -34,5 +34,4 @@ abstract class BaseTest extends TestCase
 
         File::deleteDirectory(base_path('storage/framework/testing'));
     }
-
 }
