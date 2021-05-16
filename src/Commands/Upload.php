@@ -18,7 +18,7 @@ class Upload extends Command
         config([
             'airdrop.verbose' => $this->option('verbose')
         ]);
-        
+
         $this->makeDriver()->upload();
     }
 }

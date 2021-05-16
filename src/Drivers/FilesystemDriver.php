@@ -27,6 +27,7 @@ class FilesystemDriver extends BaseDriver
             // This exact configuration of assets is already stashed,
             // so we don't need to do it again.
             $this->output('Files already exist on remote storage, not uploading.');
+
             return;
         }
 

@@ -37,11 +37,10 @@ class Install extends Command
      */
     public function handle()
     {
-        Artisan::call("vendor:publish", [
+        Artisan::call('vendor:publish', [
             '--provider' => AirdropServiceProvider::class
         ]);
 
         $this->info('Config file published!');
     }
-
 }

@@ -45,7 +45,6 @@ EOT;
             ->assertExitCode(0);
     }
 
-
     /** @test */
     public function test_single_trigger()
     {
@@ -61,6 +60,4 @@ EOT;
             ->expectsOutput($expected)
             ->assertExitCode(0);
     }
-
-
 }
