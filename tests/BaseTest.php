@@ -18,6 +18,16 @@ abstract class BaseTest extends TestCase
         ];
     }
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        // By default base_path points to the TestBench directory,
+        // but we need it to reference our app. Adding this link
+        // will make it transparent.
+        exec('ln -sf ' . __DIR__ . ' ' . base_path());
+    }
+
     protected function tearDown(): void
     {
         parent::tearDown();
@@ -25,10 +35,4 @@ abstract class BaseTest extends TestCase
         File::deleteDirectory(base_path('storage/framework/testing'));
     }
 
-    protected function getBasePath()
-    {
-        // By default base_path points to the TestBench directory,
-        // we want it to point to the root of our package.
-        return dirname(__DIR__);
-    }
 }
