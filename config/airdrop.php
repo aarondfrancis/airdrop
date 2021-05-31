@@ -1,6 +1,7 @@
 <?php
 
 use Hammerstone\Airdrop\Drivers\FilesystemDriver;
+use Hammerstone\Airdrop\Drivers\GithubActionsDriver;
 use Hammerstone\Airdrop\Triggers\ConfigTrigger;
 use Hammerstone\Airdrop\Triggers\FileTrigger;
 
@@ -23,6 +24,19 @@ return [
             // A writeable directory on the machine that builds the assets.
             // Used to build up the ZIP file before stashing it.
             'local_tmp_directory' => env('AIRDROP_LOCAL_TMP_DIR', storage_path('framework')),
+
+            // The skip file is an empty file that will be created to
+            // indicate that asset building can be skipped.
+            'skip_file' => env('AIRDROP_SKIP_FILE', base_path('.airdrop_skip')),
+        ],
+
+        'github' => [
+            // Use in conjunction with the Cache step in GitHub Actions.
+            'class' => GithubActionsDriver::class,
+
+            // Make sure this matches the `path` key in the
+            // cache step of your GitHub Actions Workflow.
+            'local_tmp_directory' => env('AIRDROP_LOCAL_TMP_DIR', '/tmp/'),
 
             // The skip file is an empty file that will be created to
             // indicate that asset building can be skipped.
