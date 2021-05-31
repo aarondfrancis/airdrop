@@ -9,9 +9,12 @@ To publish this file, run `php artisan airdrop:install`
 
 The driver you choose determines how your built assets will be stashed and restored.
 
-By default, we only offer one driver: the Filesystem driver. It will store built assets as `.zip` on a disk of your choosing (usually a cloud provider).
+We offer two drivers out of the box: 
 
-To read more about the various configuration options, head to the [Filesystem Driver](/drivers/filesystem) section.
+- the [Filesystem Driver](/drivers/filesystem), which stores built assets as `.zip` on a disk of your choosing, usually a cloud provider.
+- the [GitHub Actions Driver](/drivers/github), which stores the built assets using GitHub's [Cache Action](https://docs.github.com/en/actions/guides/caching-dependencies-to-speed-up-workflows).
+
+If neither of these meet your needs, you are free to [make your own](/drivers/custom).
 
 ## Triggers
 
