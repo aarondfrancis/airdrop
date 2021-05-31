@@ -1,9 +1,9 @@
 # Changelog
 
-## Unreleased
+## 0.2.0 - 2021-05-31
 
-- Add `airdrop:hash` command.
-- Add GitHub Actions driver.
+- Added `airdrop:hash` command.
+- Added GitHub Actions driver.
 
 ## 0.1.0 - 2021-05-16
 
