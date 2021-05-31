@@ -16,6 +16,7 @@
         "Drivers": {
             "children": {
                 "Filesystem": "/drivers/filesystem",
+                "GitHub Actions": "/drivers/github",
                 "Custom": "/drivers/custom"
             }
         },

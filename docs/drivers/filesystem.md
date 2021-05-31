@@ -1,13 +1,13 @@
 # Filesystem Driver
 
-The Filesystem Driver is the default (and only!) driver that we ship with. It stores all of your built assets as a `.zip` on a filesystem of your choosing. 
+The Filesystem Driver is the default driver that we ship with. It stores all of your built assets as a `.zip` on a filesystem of your choosing. 
 
 
 ## Configuration
 
 If you'd like to change the configuration, you can do so in `airdrop.php`.
 
-config/aidrop.php{.filename}
+config/airdrop.php{.filename}
 ```php
 [
     'drivers' => [
