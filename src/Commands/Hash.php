@@ -5,7 +5,6 @@
 
 namespace Hammerstone\Airdrop\Commands;
 
-use Arr;
 use Hammerstone\Airdrop\HashGenerator;
 use Illuminate\Console\Command;
 

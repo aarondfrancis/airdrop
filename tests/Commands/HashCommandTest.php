@@ -52,8 +52,5 @@ class HashCommandTest extends BaseTest
             ->assertExitCode(0);
 
         $this->assertEquals('foobar-acf41088634d35afb8351a0839745f2a', getenv('AIRDROP_HASH'));
-
     }
-
-
 }
