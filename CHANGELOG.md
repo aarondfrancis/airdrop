@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add Hash command
+
 ## 0.1.0 - 2021-05-16
 
 - No changes, just moving to 0.1.0 release.

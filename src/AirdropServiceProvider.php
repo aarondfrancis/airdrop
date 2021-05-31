@@ -7,6 +7,7 @@ namespace Hammerstone\Airdrop;
 
 use Hammerstone\Airdrop\Commands\Debug;
 use Hammerstone\Airdrop\Commands\Download;
+use Hammerstone\Airdrop\Commands\Hash;
 use Hammerstone\Airdrop\Commands\Install;
 use Hammerstone\Airdrop\Commands\Upload;
 use Illuminate\Support\ServiceProvider;
@@ -20,7 +21,8 @@ class AirdropServiceProvider extends ServiceProvider
                 Install::class,
                 Download::class,
                 Upload::class,
-                Debug::class
+                Debug::class,
+                Hash::class,
             ]);
         }
 
