@@ -8,7 +8,7 @@ When using the GitHub driver, there is _no need_ for a remote disk anywhere. Ins
 
 The GitHub driver is an extension of the Filesystem driver so much of the configuration is the same, although fewer items are needed. 
 
-config/airdrop.php{.filename}
+config/airdrop.php {.filename}
 ```php
 [
     'drivers' => [
@@ -39,7 +39,7 @@ There are a couple steps you'll need to add to your GitHub Workflow to take adva
 
 The first step is to calculate the hash of the inputs and save it in the environment for the cache step to use:
 
-.github/workflows/deploy.yml{.filename}
+.github/workflows/deploy.yml {.filename}
 ```yaml
 - name: Generate Airdrop Hash
   run: echo "AIRDROP_HASH=$(php artisan airdrop:hash)" >> $GITHUB_ENV
@@ -49,7 +49,7 @@ This command is going to run `php artisan airdrop:hash` to calculate the hash of
 
 The next step you'll need to add is the cache step:
 
-.github/workflows/deploy.yml{.filename}
+.github/workflows/deploy.yml {.filename}
 ```yaml
 - name: Generate Airdrop Hash
   run: echo "AIRDROP_HASH=$(php artisan airdrop:hash)" >> $GITHUB_ENV

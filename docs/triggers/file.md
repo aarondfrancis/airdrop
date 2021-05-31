@@ -2,7 +2,7 @@
 
 The File Trigger keeps track of specific files and instructs Airdrop to rebuild assets when any of them change.
 
-config/airdrop.php{.filename}
+config/airdrop.php {.filename}
 ```php
 /*
  * Trigger a rebuild when files change.
@@ -48,7 +48,7 @@ FileTrigger::class => [
 
 The File Trigger allows both an `include` and `exclude` key, so if you want to include a whole directory and exclude a particular file, you can do that:
 
-config/airdrop.php{.filename}
+config/airdrop.php {.filename}
 ```php
 FileTrigger::class => [
     'include' => [
@@ -65,7 +65,7 @@ FileTrigger::class => [
 
 If you're using NPM to manage your frontend packages, you'll want to include `package-lock.json` so that whenever you add, remove, or upgrade packages then Airdrop will rebuild your assets.
 
-config/airdrop.php{.filename}
+config/airdrop.php {.filename}
 ```php
 FileTrigger::class => [
     'include' => [
@@ -77,7 +77,7 @@ FileTrigger::class => [
 
 In the same way, if you're using Yarn, add `yarn.lock`.
 
-config/airdrop.php{.filename}
+config/airdrop.php {.filename}
 ```php
 FileTrigger::class => [
     'include' => [
@@ -91,7 +91,7 @@ FileTrigger::class => [
 
 If you're using Tailwind CSS, make sure you include that as well, as any changes to the Tailwind config will affect the resulting assets.
 
-config/airdrop.php{.filename}
+config/airdrop.php {.filename}
 ```php
 FileTrigger::class => [
     'include' => [

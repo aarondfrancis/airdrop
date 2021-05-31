@@ -4,7 +4,7 @@ The Config Trigger is extremely straightforward: it tells Airdrop to rebuild ass
 
 By default we populate it with your `APP_ENV` which will keep your development, testing, and production asset builds separate.
 
-config/airdrop.php{.filename}
+config/airdrop.php {.filename}
 ```php
     /*
      * Trigger a rebuild when anything in this configuration array
@@ -22,7 +22,7 @@ You're free to add as many other values as you like.
 
 You can inspect the `ConfigTrigger.php` class to see how simple it really is, it just returns the config from your `airdrop.php`. 
 
-ConfigTrigger.php{.filename}
+ConfigTrigger.php {.filename}
 ```php
 class ConfigTrigger implements TriggerContract
 {

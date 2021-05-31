@@ -7,7 +7,7 @@ The Filesystem Driver is the default driver that we ship with. It stores all of 
 
 If you'd like to change the configuration, you can do so in `airdrop.php`.
 
-config/airdrop.php{.filename}
+config/airdrop.php {.filename}
 ```php
 [
     'drivers' => [

@@ -29,7 +29,7 @@ The `outputs` section of the config file defines which files are generated as th
 
 **Anything that is generated as a result of your build process should be included here.**
 
-config/airdrop.php{.filename}
+config/airdrop.php {.filename}
 ```php
 [
     // ...

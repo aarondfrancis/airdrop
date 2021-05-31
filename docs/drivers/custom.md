@@ -4,7 +4,7 @@ If the [Filesystem](/drivers/filesystem) Driver isn't quite right for you, you c
 
 Your custom driver must extend the Hammerstone `BaseDriver`.
 
-CustomDriver.php{.filename}
+CustomDriver.php {.filename}
 ```php
 use Hammerstone\Airdrop\Drivers\BaseDriver;
 
@@ -35,7 +35,7 @@ The current hash will be available as a class property `$hash`, and the config f
 
 To enable your driver, you'll need to add it to the `drivers` array in `airdrop.php`.
 
-config/airdrop.php{.filename}
+config/airdrop.php {.filename}
 ```php
 'drivers' => [
     'custom' => [

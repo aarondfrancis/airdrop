@@ -8,7 +8,7 @@ Let's imagine we want to trigger an asset rebuild any time the week of the year 
 
 Your custom trigger class must implement the Hammerstone `TriggerContract`.
 
-WeekTrigger.php{.filename}
+WeekTrigger.php {.filename}
 ```php
 use Hammerstone\Airdrop\Contracts\TriggerContract;
 
@@ -32,7 +32,7 @@ With that contract, you'll be forced to implement a method `triggerBuildWhenChan
 
 In our case, we just want to return the week of the year, so we'll ignore that config.
 
-WeekTrigger.php{.filename}
+WeekTrigger.php {.filename}
 ```php
 use Hammerstone\Airdrop\Contracts\TriggerContract;
 
@@ -56,7 +56,7 @@ class WeekTrigger implements TriggerContract
 
 To enable your trigger, you'll need to add it to `airdrop.php`. Since no config is required in this example you don't need to pass an empty array, you can just use the class name.
 
-config/airdrop.php{.filename}
+config/airdrop.php {.filename}
 ```php
 'triggers' => [
     ConfigTrigger::class => [
@@ -74,7 +74,7 @@ config/airdrop.php{.filename}
 
 If you wanted to have configuration for your custom trigger, you could do so by setting the key to the class and the value to an array:
 
-config/airdrop.php{.filename}
+config/airdrop.php {.filename}
 ```php
 'triggers' => [
     ConfigTrigger::class => [
