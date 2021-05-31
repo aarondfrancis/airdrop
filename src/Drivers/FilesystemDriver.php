@@ -37,16 +37,27 @@ class FilesystemDriver extends BaseDriver
 
         $this->makeZip($zipPath);
 
-        $this->output('Uploading to remote disk at ' . $this->remoteStashPath() . $this->stashedPackageFilename());
+        $this->uploadToRemoteStorage($zipPath);
+    }
 
-        $this->disk()->putFileAs(
-            $this->remoteStashPath(),
-            $zipPath,
-            $this->stashedPackageFilename()
-        );
+    /**
+     * Called before building files, to see if we can skip that
+     * altogether and just download them.
+     */
+    public function download()
+    {
+        if ($this->extract()) {
+            $this->output('Assets downloaded and extracted.');
 
-        // Clean up after ourselves once it's uploaded.
-        File::delete($zipPath);
+            // Touch a file that can be used to inform the deploy
+            // process that building assets can be skipped.
+            File::put($this->skipFilePath(), '');
+        } else {
+            $this->output('Assets did not exist.');
+
+            // Remove the file if extraction did not succeed.
+            File::delete($this->skipFilePath());
+        }
     }
 
     /**
@@ -74,24 +85,6 @@ class FilesystemDriver extends BaseDriver
         $zip->close();
     }
 
-    /**
-     * Called before building files, to see if we can skip that
-     * altogether and just download them.
-     */
-    public function download()
-    {
-        if ($this->extract()) {
-            $this->output('Assets downloaded and extracted.');
-            // Touch a file that can be used to inform the deploy
-            // process that building assets can be skipped.
-            File::put($this->skipFilePath(), '');
-        } else {
-            $this->output('Assets did not exist.');
-            // Remove the file if extraction did not succeed.
-            File::delete($this->skipFilePath());
-        }
-    }
-
     public function extract()
     {
         if (!$this->exists()) {
@@ -100,24 +93,20 @@ class FilesystemDriver extends BaseDriver
 
         $zipPath = $this->localStashPath() . $this->stashedPackageFilename();
 
-        // Download the file to local disk as a stream.
-        File::put(
-            $zipPath,
-            $this->disk()->readStream($this->remoteStashPath() . $this->stashedPackageFilename())
-        );
+        $this->downloadFromRemoteStorage($zipPath);
 
         $zip = new ZipArchive;
 
         $status = $zip->open($zipPath);
 
         if ($status !== true) {
-            throw new Exception('Airdrop was trying to extract previously built assets, but could not open the zip file at ' . json_encode($zipPath));
+            throw new Exception(
+                'Airdrop was trying to extract previously built assets, but could not open the zip file at ' . json_encode($zipPath)
+            );
         }
 
         // Put all the assets back where they should be.
-        $extracted = $zip->extractTo(base_path());
-
-        if (!$extracted) {
+        if (!$zip->extractTo(base_path())) {
             throw new Exception('Zip not extracted');
         }
 
@@ -167,6 +156,36 @@ class FilesystemDriver extends BaseDriver
     protected function stashedPackageFilename()
     {
         return "airdrop-{$this->hash}.zip";
+    }
+
+    /**
+     * @param string $zipPath
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     */
+    protected function downloadFromRemoteStorage($zipPath)
+    {
+        // Download the file to local disk as a stream.
+        File::put(
+            $zipPath,
+            $this->disk()->readStream($this->remoteStashPath() . $this->stashedPackageFilename())
+        );
+    }
+
+    /**
+     * @param string $zipPath
+     */
+    protected function uploadToRemoteStorage($zipPath)
+    {
+        $this->output('Uploading to remote disk at ' . $this->remoteStashPath() . $this->stashedPackageFilename());
+
+        $this->disk()->putFileAs(
+            $this->remoteStashPath(),
+            $zipPath,
+            $this->stashedPackageFilename()
+        );
+
+        // Clean up after ourselves once it's uploaded.
+        File::delete($zipPath);
     }
 
     /**
