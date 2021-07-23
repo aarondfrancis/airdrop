@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.1 - 2021-07-22
+- Added `exclude_names` to both the FileTrigger and output config. This will let you ignore filenames, regardless of what folder they show up in. E.g. `.DS_Store`
+
 ## 0.2.0 - 2021-05-31
 
 - Added `airdrop:hash` command.
