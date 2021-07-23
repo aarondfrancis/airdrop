@@ -60,7 +60,6 @@ class FileSystemDriverTest extends BaseTest
 
         $this->assertCount(1, $files);
         $this->assertStringEndsWith('css/app.css', $files[0]);
-
     }
 
     /** @test */
