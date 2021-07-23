@@ -24,8 +24,11 @@ class FileTrigger implements TriggerContract
     {
         $include = Arr::get($config, 'include', []);
         $exclude = Arr::get($config, 'exclude', []);
+        $excludeNames = Arr::get($config, 'exclude_names', []);
 
-        return collect($this->files($include, $exclude))
+        $files = $this->files($include, $exclude, $excludeNames);
+
+        return collect($files)
             ->diff($exclude)
             ->unique()
             ->values()
@@ -44,8 +47,10 @@ class FileTrigger implements TriggerContract
      * @param $exclude
      * @return Generator
      */
-    protected function files($include, $exclude)
+    protected function files($include, $exclude, $excludeNames)
     {
-        return FileSelection::create($include, $exclude)->selected();
+        return FileSelection::create($include, $exclude)
+            ->excludeNames($excludeNames)
+            ->selected();
     }
 }

@@ -72,4 +72,24 @@ class InputFilesTriggerTest extends BaseTest
         $this->assertCount(1, $hashes);
         $this->assertEquals('62f6d1bfc836a1536c4869fe8f78249b', array_values($hashes)[0]);
     }
+
+    /** @test */
+    public function globs_get_excluded()
+    {
+        $config = [
+            'include' => [
+                base_path('tests/Support'),
+            ],
+            'exclude_names' => [
+                'secondary-webpack.mix.example'
+            ]
+        ];
+
+        $hashes = (new FileTrigger)->triggerBuildWhenChanged($config);
+
+        $this->assertCount(3, $hashes);
+        $this->assertEquals('d06dee8236430e6964e23ac1277ca231', array_values($hashes)[0]);
+        $this->assertEquals('01fdb3785b52fc70114089f31b1e9eff', array_values($hashes)[1]);
+        $this->assertEquals('62f6d1bfc836a1536c4869fe8f78249b', array_values($hashes)[2]);
+    }
 }

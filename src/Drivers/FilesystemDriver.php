@@ -122,8 +122,11 @@ class FilesystemDriver extends BaseDriver
     {
         $include = config('airdrop.outputs.include') ?? [];
         $exclude = config('airdrop.outputs.exclude') ?? [];
+        $excludeNames = config('airdrop.outputs.exclude_names') ?? [];
 
-        return FileSelection::create($include, $exclude)->selected();
+        return FileSelection::create($include, $exclude)
+            ->excludeNames($excludeNames)
+            ->selected();
     }
 
     /**

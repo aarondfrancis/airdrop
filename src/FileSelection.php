@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * @author Aaron Francis
  * @author Spatie bvba info@spatie.be
  * @license MIT
  * @see https://github.com/spatie/laravel-backup/blob/master/src/Tasks/Backup/FileSelection.php
@@ -13,13 +14,24 @@ use Symfony\Component\Finder\Finder;
 
 class FileSelection
 {
-    /** @var \Illuminate\Support\Collection */
+    /**
+     * @var \Illuminate\Support\Collection
+     */
     protected $includeFilesAndDirectories;
 
-    /** @var \Illuminate\Support\Collection */
+    /**
+     * @var \Illuminate\Support\Collection
+     */
     protected $excludeFilesAndDirectories;
 
-    /** @var bool */
+    /**
+     * @var array
+     */
+    protected $excludeNames = [];
+
+    /**
+     * @var bool
+     */
     protected $shouldFollowLinks = false;
 
     /**
@@ -40,6 +52,17 @@ class FileSelection
     {
         $this->includeFilesAndDirectories = collect($include);
         $this->excludeFilesAndDirectories = collect($exclude);
+    }
+
+    /**
+     * @param array $patterns
+     * @return FileSelection
+     */
+    public function excludeNames($patterns)
+    {
+        $this->excludeNames = $patterns;
+
+        return $this;
     }
 
     /**
@@ -77,10 +100,11 @@ class FileSelection
             return [];
         }
 
-        $finder = (new Finder())
+        $finder = (new Finder)
             ->ignoreDotFiles(false)
             ->ignoreVCS(false)
-            ->files();
+            ->files()
+            ->notName($this->excludeNames);
 
         if ($this->shouldFollowLinks) {
             $finder->followLinks();

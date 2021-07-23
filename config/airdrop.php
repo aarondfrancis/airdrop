@@ -98,6 +98,14 @@ return [
             'exclude' => [
                 //
             ],
+
+            /*
+             * Filename strings or patterns that should be excluded,
+             * regardless of what directory they are found in.
+             */
+            'exclude_names' => [
+                '.DS_Store'
+            ]
         ]
     ],
 
@@ -128,5 +136,13 @@ return [
         'exclude' => [
             //
         ],
+
+        /*
+         * Filename strings or patterns that should be excluded,
+         * regardless of what directory they are found in.
+         */
+        'exclude_names' => [
+            '.DS_Store'
+        ]
     ],
 ];

@@ -5,6 +5,7 @@
 
 namespace Hammerstone\Airdrop\Tests\Drivers;
 
+use Hammerstone\Airdrop\Concerns\MakesDrivers;
 use Hammerstone\Airdrop\Tests\BaseTest;
 use Hammerstone\Airdrop\Triggers\FileTrigger;
 use Illuminate\Support\Facades\File;
@@ -12,6 +13,8 @@ use Illuminate\Support\Facades\Storage;
 
 class FileSystemDriverTest extends BaseTest
 {
+    use MakesDrivers;
+
     public function getEnvironmentSetUp($app)
     {
         Storage::fake('s3');
@@ -38,6 +41,26 @@ class FileSystemDriverTest extends BaseTest
         $this->artisan('airdrop:upload');
 
         Storage::disk('s3')->assertExists('airdrop/airdrop-36eda7109ca99a5fb55cffefeca3c554.zip');
+    }
+
+    /** @test */
+    public function names_get_excluded()
+    {
+        Storage::fake('s3');
+
+        config()->set('airdrop.outputs.include', [
+            base_path('tests/Support/public')
+        ]);
+
+        config()->set('airdrop.outputs.exclude_names', [
+            'app.js'
+        ]);
+
+        $files = $this->makeDriver()->files();
+
+        $this->assertCount(1, $files);
+        $this->assertStringEndsWith('css/app.css', $files[0]);
+
     }
 
     /** @test */
