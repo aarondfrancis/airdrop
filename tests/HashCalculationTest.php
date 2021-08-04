@@ -69,6 +69,5 @@ class HashCalculationTest extends BaseTest
         $hash2 = (new HashGenerator)->generate();
 
         $this->assertEquals($hash1, $hash2);
-
     }
 }
