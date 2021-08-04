@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.2 - 2021-08-04
+- Fixed: Triggers are now sorted to provide more stability across machines.
+
 ## 0.2.1 - 2021-07-22
 - Added `exclude_names` to both the FileTrigger and output config. This will let you ignore filenames, regardless of what folder they show up in. E.g. `.DS_Store`
 

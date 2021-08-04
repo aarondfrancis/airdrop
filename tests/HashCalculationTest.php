@@ -6,6 +6,7 @@
 namespace Hammerstone\Airdrop\Tests;
 
 use Hammerstone\Airdrop\HashGenerator;
+use Hammerstone\Airdrop\Triggers\ConfigTrigger;
 use Hammerstone\Airdrop\Triggers\FileTrigger;
 
 class HashCalculationTest extends BaseTest
@@ -32,5 +33,42 @@ class HashCalculationTest extends BaseTest
         $hash = (new HashGenerator)->generate();
 
         $this->assertEquals('36eda7109ca99a5fb55cffefeca3c554', $hash);
+    }
+
+    /** @test */
+    public function it_gets_sorted()
+    {
+        config()->set('airdrop.triggers', [
+            ConfigTrigger::class => [
+                'a_key' => 'test',
+                'b_key' => 'test'
+            ],
+            FileTrigger::class => [
+                'include' => [
+                    base_path('tests/Support/primary-webpack.mix.example'),
+                    base_path('tests/Support/secondary-webpack.mix.example'),
+                ]
+            ]
+        ]);
+
+        $hash1 = (new HashGenerator)->generate();
+
+        config()->set('airdrop.triggers', [
+            FileTrigger::class => [
+                'include' => [
+                    base_path('tests/Support/secondary-webpack.mix.example'),
+                    base_path('tests/Support/primary-webpack.mix.example'),
+                ]
+            ],
+            ConfigTrigger::class => [
+                'b_key' => 'test',
+                'a_key' => 'test',
+            ],
+        ]);
+
+        $hash2 = (new HashGenerator)->generate();
+
+        $this->assertEquals($hash1, $hash2);
+
     }
 }

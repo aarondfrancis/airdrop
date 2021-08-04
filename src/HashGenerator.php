@@ -50,8 +50,13 @@ class HashGenerator
         foreach ($this->triggers as $class => $config) {
             $this->ensureContractImplemented($class);
 
-            $contents[$class] = app($class)->triggerBuildWhenChanged($config);
+            $values = app($class)->triggerBuildWhenChanged($config);
+            ksort($values);
+
+            $contents[$class] = $values;
         }
+
+        ksort($contents);
 
         return $contents;
     }
