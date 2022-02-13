@@ -39,6 +39,7 @@ class FileTrigger implements TriggerContract
                     preg_replace('/^' . preg_quote(base_path(), '/') . '/i', '', $file) => File::hash($file)
                 ];
             })
+            ->sortKeys()
             ->toArray();
     }
 
