@@ -32,6 +32,7 @@ class HashGenerator
 
     /**
      * @return string
+     *
      * @throws Exception
      */
     public function generate()
@@ -41,6 +42,7 @@ class HashGenerator
 
     /**
      * @return array
+     *
      * @throws Exception
      */
     public function asArray()
@@ -63,6 +65,7 @@ class HashGenerator
 
     /**
      * @param $class
+     *
      * @throws Exception
      */
     protected function ensureContractImplemented($class)

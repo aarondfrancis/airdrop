@@ -4,6 +4,7 @@
  * @author Aaron Francis
  * @author Spatie bvba info@spatie.be
  * @license MIT
+ *
  * @see https://github.com/spatie/laravel-backup/blob/master/src/Tasks/Backup/FileSelection.php
  */
 
@@ -35,8 +36,8 @@ class FileSelection
     protected $shouldFollowLinks = false;
 
     /**
-     * @param array $include
-     * @param array $exclude
+     * @param  array  $include
+     * @param  array  $exclude
      * @return FileSelection
      */
     public static function create($include = [], $exclude = [])
@@ -45,8 +46,8 @@ class FileSelection
     }
 
     /**
-     * @param array $include
-     * @param array $exclude
+     * @param  array  $include
+     * @param  array  $exclude
      */
     public function __construct($include = [], $exclude = [])
     {
@@ -55,7 +56,7 @@ class FileSelection
     }
 
     /**
-     * @param array $patterns
+     * @param  array  $patterns
      * @return FileSelection
      */
     public function excludeNames($patterns)
@@ -68,8 +69,7 @@ class FileSelection
     /**
      * Do not included the given files and directories.
      *
-     * @param array|string $excludeFilesAndDirectories
-     *
+     * @param  array|string  $excludeFilesAndDirectories
      * @return FileSelection
      */
     public function excludeFilesFrom($excludeFilesAndDirectories)
@@ -169,8 +169,7 @@ class FileSelection
     }
 
     /**
-     * @param string|array $paths
-     *
+     * @param  string|array  $paths
      * @return \Illuminate\Support\Collection
      */
     protected function sanitize($paths)

@@ -62,6 +62,7 @@ class FilesystemDriver extends BaseDriver
 
     /**
      * @param $path
+     *
      * @throws Exception
      */
     public function makeZip($path)
@@ -162,7 +163,8 @@ class FilesystemDriver extends BaseDriver
     }
 
     /**
-     * @param string $zipPath
+     * @param  string  $zipPath
+     *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     protected function downloadFromRemoteStorage($zipPath)
@@ -175,7 +177,7 @@ class FilesystemDriver extends BaseDriver
     }
 
     /**
-     * @param string $zipPath
+     * @param  string  $zipPath
      */
     protected function uploadToRemoteStorage($zipPath)
     {

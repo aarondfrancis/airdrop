@@ -14,6 +14,7 @@ trait MakesDrivers
 {
     /**
      * @return BaseDriver
+     *
      * @throws Exception
      */
     public function makeDriver()
@@ -41,6 +42,7 @@ trait MakesDrivers
 
     /**
      * @param $driver
+     *
      * @throws Exception
      */
     protected function ensureDriverExtendsBase($driver)
