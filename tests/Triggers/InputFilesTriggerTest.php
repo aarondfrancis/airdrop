@@ -88,8 +88,8 @@ class InputFilesTriggerTest extends BaseTest
         $hashes = (new FileTrigger)->triggerBuildWhenChanged($config);
 
         $this->assertCount(3, $hashes);
-        $this->assertEquals('d06dee8236430e6964e23ac1277ca231', array_values($hashes)[0]);
-        $this->assertEquals('01fdb3785b52fc70114089f31b1e9eff', array_values($hashes)[1]);
-        $this->assertEquals('62f6d1bfc836a1536c4869fe8f78249b', array_values($hashes)[2]);
+        $this->assertEquals('62f6d1bfc836a1536c4869fe8f78249b', array_values($hashes)[0]);
+        $this->assertEquals('d06dee8236430e6964e23ac1277ca231', array_values($hashes)[1]);
+        $this->assertEquals('01fdb3785b52fc70114089f31b1e9eff', array_values($hashes)[2]);
     }
 }
