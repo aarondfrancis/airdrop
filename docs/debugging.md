@@ -56,11 +56,11 @@ php artisan airdrop:debug > airdrop.json
 Or you can run it before and after a command you expect is modifying files (as was the case with [this issue](https://github.com/hammerstonedev/airdrop/issues/2)) to see what the difference is:
 
 ```bash
-php artisan aidrop:debug > before.json
+php artisan airdrop:debug > before.json
 
 npm run production
 
-php artisan aidrop:debug > after.json
+php artisan airdrop:debug > after.json
 
 diff before.json after.json
 ```
