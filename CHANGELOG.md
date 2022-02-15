@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.3 - 2022-02-15
+- Added: Support for Laravel 9
+
 ## 0.2.2 - 2021-08-04
 - Fixed: Triggers are now sorted to provide more stability across machines.
 
