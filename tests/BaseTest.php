@@ -26,6 +26,8 @@ abstract class BaseTest extends TestCase
         // but we need it to reference our app. Adding this link
         // will make it transparent.
         if (!File::exists(base_path() . '/tests/Support')) {
+            // Support for older versions of testbench that don't have a tests directory.
+            File::ensureDirectoryExists(base_path() . '/tests');
             exec('ln -sf ' . __DIR__ . '/Support ' . base_path() . '/tests/Support');
         }
     }
