@@ -4,36 +4,38 @@ on:
   push:
     branches:
       - main
-
   pull_request:
-    types: [ opened, synchronize, reopened ]
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
     if: "!contains(github.event.head_commit.message, 'ci skip')"
+
     strategy:
       fail-fast: false
       matrix:
-        php: [ 7.2, 7.3, 7.4, 8.0, 8.1 ]
-        laravel: [ 7.*, 8.*, 9.* , 10.*]
-        dependency-version: [ prefer-lowest, prefer-stable ]
+        php: [7.2, 7.3, 7.4, 8.0, 8.1, '8.2']
+        laravel: ['7.*', '8.*', '9.*', '10.*', '11.*']
+        dependency-version: [prefer-lowest, prefer-stable]
         include:
           - laravel: 10.*
             testbench: 8.*
           - laravel: 7.*
             testbench: 5.*
-
           - laravel: 7.*
             dependency-version: prefer-lowest
             composer-version: --1
-
           - laravel: 8.*
             testbench: 6.*
-
           - laravel: 9.*
             testbench: 7.*
-
+          - laravel: 11.*
+            testbench: 9.*
         exclude:
           - laravel: 10.*
             php: 7.2
@@ -45,25 +47,27 @@ jobs:
             php: 8.0
           - laravel: 7.*
             php: 8.1
-
           - laravel: 8.*
             php: 8.1
             dependency-version: prefer-lowest
-
-          # Laravel 8 requires PHP 7.3.
           - laravel: 8.*
             php: 7.2
-
-          # Laravel 9 requires PHP 8.
           - laravel: 9.*
             php: 7.2
-
           - laravel: 9.*
             php: 7.3
-
           - laravel: 9.*
             php: 7.4
-
+          - laravel: 11.*
+            php: 7.2
+          - laravel: 11.*
+            php: 7.3
+          - laravel: 11.*
+            php: 7.4
+          - laravel: 11.*
+            php: 8.0
+          - laravel: 11.*
+            php: 8.1
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
