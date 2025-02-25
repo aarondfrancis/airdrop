@@ -7,7 +7,6 @@
 namespace AaronFrancis\Airdrop\Tests\Drivers;
 
 use AaronFrancis\Airdrop\Concerns\MakesDrivers;
-use AaronFrancis\Airdrop\HashGenerator;
 use AaronFrancis\Airdrop\Tests\BaseTest;
 use AaronFrancis\Airdrop\Triggers\FileTrigger;
 use Illuminate\Support\Facades\File;
