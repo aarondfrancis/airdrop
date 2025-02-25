@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
@@ -64,8 +65,6 @@ class HashGenerator
     }
 
     /**
-     * @param $class
-     *
      * @throws Exception
      */
     protected function ensureContractImplemented($class)
