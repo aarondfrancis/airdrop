@@ -14,84 +14,47 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    if: "!contains(github.event.head_commit.message, 'ci skip')"
-
     strategy:
       fail-fast: false
       matrix:
-        php: [7.2, 7.3, 7.4, 8.0, 8.1, '8.2']
-        laravel: ['7.*', '8.*', '9.*', '10.*', '11.*', '12.*']
-        dependency-version: [prefer-lowest, prefer-stable]
-        include:
-          - laravel: 10.*
-            testbench: 8.*
-          - laravel: 7.*
-            testbench: 5.*
-          - laravel: 7.*
-            dependency-version: prefer-lowest
-            composer-version: --1
-          - laravel: 8.*
-            testbench: 6.*
-          - laravel: 9.*
-            testbench: 7.*
-          - laravel: 11.*
-            testbench: 9.*
-          - laravel: 12.*
-            testbench: 10.*
+        php: [ 8.1, 8.2, 8.3 ]
+        laravel: [ '10.*', '11.*', '12.*' ]
+        dependency-version: [ prefer-lowest, prefer-stable ]
+
         exclude:
-          - laravel: 10.*
-            php: 7.2
-          - laravel: 10.*
-            php: 7.3
-          - laravel: 10.*
-            php: 7.4
-          - laravel: 10.*
-            php: 8.0
-          - laravel: 7.*
-            php: 8.1
-          - laravel: 8.*
-            php: 8.1
-            dependency-version: prefer-lowest
-          - laravel: 8.*
-            php: 7.2
-          - laravel: 9.*
-            php: 7.2
-          - laravel: 9.*
-            php: 7.3
-          - laravel: 9.*
-            php: 7.4
-          - laravel: 11.*
-            php: 7.2
-          - laravel: 11.*
-            php: 7.3
-          - laravel: 11.*
-            php: 7.4
-          - laravel: 11.*
-            php: 8.0
           - laravel: 11.*
             php: 8.1
-          - laravel: 12.*
-            php: 7.2
-          - laravel: 12.*
-            php: 7.3
-          - laravel: 12.*
-            php: 7.4
-          - laravel: 12.*
-            php: 8.0
           - laravel: 12.*
             php: 8.1
 
-    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
+    name: P${{ matrix.php }} / L${{ matrix.laravel }} / ${{ matrix.dependency-version }}
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: fast_paginate
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_USER: test
+          MYSQL_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v4
         with:
-          path: ~/.composer/cache/files
-          key: dependencies-laravel-${{ matrix.laravel }}-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: php-${{ matrix.php }}-l${{ matrix.laravel }}-v${{ matrix.dependency-version }}-composer-${{ hashFiles('composer.json') }}
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -102,8 +65,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer self-update ${{ matrix.composer-version }}
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer config minimum-stability dev
+          composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update --dev
           composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
       - name: Execute tests
