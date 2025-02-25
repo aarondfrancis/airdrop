@@ -121,7 +121,7 @@ class FileSelection
         $finder->in($this->includedDirectories());
 
         foreach ($finder->getIterator() as $file) {
-            if ($this->shouldExclude($file)) {
+            if ($this->shouldExclude($file->getRealPath())) {
                 continue;
             }
 
@@ -160,7 +160,7 @@ class FileSelection
     protected function shouldExclude(string $path): bool
     {
         foreach ($this->excludeFilesAndDirectories as $excludedPath) {
-            if (Str::startsWith(realpath($path), $excludedPath)) {
+            if (Str::startsWith($path, $excludedPath)) {
                 return true;
             }
         }
