@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
@@ -61,8 +62,6 @@ class FilesystemDriver extends BaseDriver
     }
 
     /**
-     * @param $path
-     *
      * @throws Exception
      */
     public function makeZip($path)

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
@@ -44,8 +45,6 @@ class FileTrigger implements TriggerContract
     }
 
     /**
-     * @param $include
-     * @param $exclude
      * @return Generator
      */
     protected function files($include, $exclude, $excludeNames)

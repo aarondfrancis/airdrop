@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author Aaron Francis <aaron@hammerstone.dev|https://twitter.com/aarondfrancis>
  */
@@ -41,8 +42,6 @@ trait MakesDrivers
     }
 
     /**
-     * @param $driver
-     *
      * @throws Exception
      */
     protected function ensureDriverExtendsBase($driver)
