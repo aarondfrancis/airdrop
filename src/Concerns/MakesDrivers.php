@@ -6,9 +6,9 @@
 
 namespace AaronFrancis\Airdrop\Concerns;
 
-use Exception;
 use AaronFrancis\Airdrop\Drivers\BaseDriver;
 use AaronFrancis\Airdrop\HashGenerator;
+use Exception;
 use Illuminate\Support\Arr;
 
 trait MakesDrivers

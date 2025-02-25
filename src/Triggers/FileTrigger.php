@@ -6,9 +6,9 @@
 
 namespace AaronFrancis\Airdrop\Triggers;
 
-use Generator;
 use AaronFrancis\Airdrop\Contracts\TriggerContract;
 use AaronFrancis\Airdrop\FileSelection;
+use Generator;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 

@@ -6,8 +6,8 @@
 
 namespace AaronFrancis\Airdrop\Drivers;
 
-use Exception;
 use AaronFrancis\Airdrop\FileSelection;
+use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;

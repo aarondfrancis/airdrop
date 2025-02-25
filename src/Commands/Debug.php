@@ -6,8 +6,8 @@
 
 namespace AaronFrancis\Airdrop\Commands;
 
-use Arr;
 use AaronFrancis\Airdrop\HashGenerator;
+use Arr;
 use Illuminate\Console\Command;
 
 class Debug extends Command

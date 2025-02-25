@@ -6,8 +6,8 @@
 
 namespace AaronFrancis\Airdrop;
 
-use Exception;
 use AaronFrancis\Airdrop\Contracts\TriggerContract;
+use Exception;
 
 class HashGenerator
 {
