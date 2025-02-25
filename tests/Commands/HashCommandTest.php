@@ -6,7 +6,6 @@
 
 namespace AaronFrancis\Airdrop\Tests\Commands;
 
-use AaronFrancis\Airdrop\HashGenerator;
 use AaronFrancis\Airdrop\Tests\BaseTest;
 use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
 use AaronFrancis\Airdrop\Triggers\FileTrigger;
