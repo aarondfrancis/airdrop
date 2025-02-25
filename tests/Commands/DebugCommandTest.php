@@ -9,6 +9,7 @@ namespace AaronFrancis\Airdrop\Tests\Commands;
 use AaronFrancis\Airdrop\Tests\BaseTest;
 use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
 use AaronFrancis\Airdrop\Triggers\FileTrigger;
+use PHPUnit\Framework\Attributes\Test;
 
 class DebugCommandTest extends BaseTest
 {
@@ -27,7 +28,7 @@ class DebugCommandTest extends BaseTest
         ]);
     }
 
-    /** @test */
+    #[Test]
     public function test_all_triggers_output()
     {
         $expected = <<<EOT
@@ -46,7 +47,7 @@ EOT;
             ->assertExitCode(0);
     }
 
-    /** @test */
+    #[Test]
     public function test_single_trigger()
     {
         $expected = <<<EOT

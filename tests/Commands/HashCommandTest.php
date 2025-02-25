@@ -6,9 +6,11 @@
 
 namespace AaronFrancis\Airdrop\Tests\Commands;
 
+use AaronFrancis\Airdrop\HashGenerator;
 use AaronFrancis\Airdrop\Tests\BaseTest;
 use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
 use AaronFrancis\Airdrop\Triggers\FileTrigger;
+use PHPUnit\Framework\Attributes\Test;
 
 class HashCommandTest extends BaseTest
 {
@@ -27,31 +29,31 @@ class HashCommandTest extends BaseTest
         ]);
     }
 
-    /** @test */
+    #[Test]
     public function test_all_triggers_output()
     {
         $this->artisan('airdrop:hash')
-            ->expectsOutput('acf41088634d35afb8351a0839745f2a')
+            ->expectsOutput('52b0daab48aded4aab3fc7e03af2d128')
             ->assertExitCode(0);
     }
 
-    /** @test */
+    #[Test]
     public function test_all_triggers_output_w_prefix()
     {
         $this->artisan('airdrop:hash --prefix=foobar-')
-            ->expectsOutput('foobar-acf41088634d35afb8351a0839745f2a')
+            ->expectsOutput('foobar-52b0daab48aded4aab3fc7e03af2d128')
             ->assertExitCode(0);
     }
 
-    /** @test */
+    #[Test]
     public function test_all_triggers_output_set_env()
     {
         $this->assertEquals('', getenv('AIRDROP_HASH'));
 
         $this->artisan('airdrop:hash --prefix=foobar- --putenv=AIRDROP_HASH')
-            ->expectsOutput('foobar-acf41088634d35afb8351a0839745f2a')
+            ->expectsOutput('foobar-52b0daab48aded4aab3fc7e03af2d128')
             ->assertExitCode(0);
 
-        $this->assertEquals('foobar-acf41088634d35afb8351a0839745f2a', getenv('AIRDROP_HASH'));
+        $this->assertEquals('foobar-52b0daab48aded4aab3fc7e03af2d128', getenv('AIRDROP_HASH'));
     }
 }

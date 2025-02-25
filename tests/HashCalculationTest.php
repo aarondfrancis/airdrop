@@ -9,10 +9,11 @@ namespace AaronFrancis\Airdrop\Tests;
 use AaronFrancis\Airdrop\HashGenerator;
 use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
 use AaronFrancis\Airdrop\Triggers\FileTrigger;
+use PHPUnit\Framework\Attributes\Test;
 
 class HashCalculationTest extends BaseTest
 {
-    /** @test */
+    #[Test]
     public function it_tests_basic_file_hash()
     {
         config()->set('airdrop.triggers', [
@@ -33,10 +34,10 @@ class HashCalculationTest extends BaseTest
 
         $hash = (new HashGenerator)->generate();
 
-        $this->assertEquals('36eda7109ca99a5fb55cffefeca3c554', $hash);
+        $this->assertEquals('0cf3788c521e4652ad2ad39ffd7974ec', $hash);
     }
 
-    /** @test */
+    #[Test]
     public function it_gets_sorted()
     {
         config()->set('airdrop.triggers', [

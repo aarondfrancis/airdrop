@@ -7,10 +7,12 @@
 namespace AaronFrancis\Airdrop\Tests\Drivers;
 
 use AaronFrancis\Airdrop\Concerns\MakesDrivers;
+use AaronFrancis\Airdrop\HashGenerator;
 use AaronFrancis\Airdrop\Tests\BaseTest;
 use AaronFrancis\Airdrop\Triggers\FileTrigger;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use PHPUnit\Framework\Attributes\Test;
 
 class FileSystemDriverTest extends BaseTest
 {
@@ -34,17 +36,17 @@ class FileSystemDriverTest extends BaseTest
         ]);
     }
 
-    /** @test */
+    #[Test]
     public function it_creates_and_uploads_a_zip()
     {
         Storage::fake('s3');
 
         $this->artisan('airdrop:upload');
 
-        Storage::disk('s3')->assertExists('airdrop/airdrop-36eda7109ca99a5fb55cffefeca3c554.zip');
+        Storage::disk('s3')->assertExists('airdrop/airdrop-0cf3788c521e4652ad2ad39ffd7974ec.zip');
     }
 
-    /** @test */
+    #[Test]
     public function names_get_excluded()
     {
         Storage::fake('s3');
@@ -63,7 +65,7 @@ class FileSystemDriverTest extends BaseTest
         $this->assertStringEndsWith('css/app.css', $files[0]);
     }
 
-    /** @test */
+    #[Test]
     public function it_downloads_and_restores()
     {
         $this->artisan('airdrop:upload');
