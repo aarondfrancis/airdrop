@@ -3,7 +3,7 @@
 
 You can install the package via Composer
 ```text
-composer require hammerstone/airdrop
+composer require aaronfrancis/airdrop
 ```
 
 Once the package is installed, you may optionally publish the config file by running 

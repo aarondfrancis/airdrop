@@ -1,9 +1,9 @@
 
 # Airdrop for Laravel
 
-> View this package on Github [github.com/hammerstonehq/airdrop](https://github.com/hammerstonehq/airdrop).
+> View this package on Github [github.com/aarondfrancis/airdrop](https://github.com/aarondfrancis/airdrop).
 
-Hammerstone Airdrop for Laravel is a package that speeds up your code deploys by skipping your asset build step whenever possible.
+Airdrop for Laravel is a package that speeds up your code deploys by skipping your asset build step whenever possible.
 
 When you're deploying your code, Airdrop will calculate a hash of everything needed to build your assets: installed packages, JS/CSS files, ENV vars, etc. 
 

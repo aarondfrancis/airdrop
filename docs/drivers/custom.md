@@ -2,7 +2,7 @@
 
 If the [Filesystem](/drivers/filesystem) Driver isn't quite right for you, you can build your own quite easily.
 
-Your custom driver must extend the Hammerstone `BaseDriver`.
+Your custom driver must extend the `BaseDriver`.
 
 CustomDriver.php {.filename}
 ```php

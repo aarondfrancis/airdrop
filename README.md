@@ -4,7 +4,7 @@
 
 > Read the full docs at [hammerstone.dev/airdrop/docs](https://hammerstone.dev/airdrop/docs/main/overview).
 
-Hammerstone Airdrop for Laravel is a package that speeds up your deploys by skipping your asset build step whenever possible.
+Airdrop for Laravel is a package that speeds up your deploys by skipping your asset build step whenever possible.
 
 When you're deploying your code, Airdrop will calculate a hash of everything needed to build your assets: installed packages, JS/CSS files, ENV vars, etc.
 
@@ -15,7 +15,7 @@ After Airdrop has calculated a hash for these inputs, it will check to see if it
 
 You can install the package via Composer
 ```console
-composer require hammerstone/airdrop
+composer require aaronfrancis/airdrop
 ```
 
 Once the package is installed, you may optionally publish the config file by running 

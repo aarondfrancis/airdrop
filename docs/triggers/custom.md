@@ -6,7 +6,7 @@ Let's imagine we want to trigger an asset rebuild any time the week of the year 
 
 ## Creating the Class
 
-Your custom trigger class must implement the Hammerstone `TriggerContract`.
+Your custom trigger class must implement the `TriggerContract`.
 
 WeekTrigger.php {.filename}
 ```php
