@@ -10,7 +10,7 @@ Your custom trigger class must implement the Hammerstone `TriggerContract`.
 
 WeekTrigger.php {.filename}
 ```php
-use Hammerstone\Airdrop\Contracts\TriggerContract;
+use AaronFrancis\Airdrop\Contracts\TriggerContract;
 
 class WeekTrigger implements TriggerContract
 {
@@ -34,7 +34,7 @@ In our case, we just want to return the week of the year, so we'll ignore that c
 
 WeekTrigger.php {.filename}
 ```php
-use Hammerstone\Airdrop\Contracts\TriggerContract;
+use AaronFrancis\Airdrop\Contracts\TriggerContract;
 
 class WeekTrigger implements TriggerContract
 {

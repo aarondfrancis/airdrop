@@ -3,11 +3,11 @@
  * @author Aaron Francis <aarondfrancis@gmail.com|https://twitter.com/aarondfrancis>
  */
 
-namespace Hammerstone\Airdrop\Tests\Commands;
+namespace AaronFrancis\Airdrop\Tests\Commands;
 
-use Hammerstone\Airdrop\Tests\BaseTest;
-use Hammerstone\Airdrop\Triggers\ConfigTrigger;
-use Hammerstone\Airdrop\Triggers\FileTrigger;
+use AaronFrancis\Airdrop\Tests\BaseTest;
+use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
+use AaronFrancis\Airdrop\Triggers\FileTrigger;
 
 class DebugCommandTest extends BaseTest
 {
@@ -31,10 +31,10 @@ class DebugCommandTest extends BaseTest
     {
         $expected = <<<EOT
 {
-    "Hammerstone\\\Airdrop\\\Triggers\\\ConfigTrigger": {
+    "AaronFrancis\\\Airdrop\\\Triggers\\\ConfigTrigger": {
         "env": "testing"
     },
-    "Hammerstone\\\Airdrop\\\Triggers\\\FileTrigger": {
+    "AaronFrancis\\\Airdrop\\\Triggers\\\FileTrigger": {
         "\/tests\/Support\/primary-webpack.mix.example": "62f6d1bfc836a1536c4869fe8f78249b"
     }
 }
@@ -50,13 +50,13 @@ EOT;
     {
         $expected = <<<EOT
 {
-    "Hammerstone\\\Airdrop\\\Triggers\\\ConfigTrigger": {
+    "AaronFrancis\\\Airdrop\\\Triggers\\\ConfigTrigger": {
         "env": "testing"
     }
 }
 EOT;
 
-        $this->artisan('airdrop:debug --trigger=Hammerstone\\\Airdrop\\\Triggers\\\ConfigTrigger')
+        $this->artisan('airdrop:debug --trigger=AaronFrancis\\\Airdrop\\\Triggers\\\ConfigTrigger')
             ->expectsOutput($expected)
             ->assertExitCode(0);
     }

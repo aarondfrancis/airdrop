@@ -3,7 +3,7 @@
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
-namespace Hammerstone\Airdrop\Drivers;
+namespace AaronFrancis\Airdrop\Drivers;
 
 abstract class BaseDriver
 {

@@ -3,13 +3,13 @@
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
-namespace Hammerstone\Airdrop;
+namespace AaronFrancis\Airdrop;
 
-use Hammerstone\Airdrop\Commands\Debug;
-use Hammerstone\Airdrop\Commands\Download;
-use Hammerstone\Airdrop\Commands\Hash;
-use Hammerstone\Airdrop\Commands\Install;
-use Hammerstone\Airdrop\Commands\Upload;
+use AaronFrancis\Airdrop\Commands\Debug;
+use AaronFrancis\Airdrop\Commands\Download;
+use AaronFrancis\Airdrop\Commands\Hash;
+use AaronFrancis\Airdrop\Commands\Install;
+use AaronFrancis\Airdrop\Commands\Upload;
 use Illuminate\Support\ServiceProvider;
 
 class AirdropServiceProvider extends ServiceProvider

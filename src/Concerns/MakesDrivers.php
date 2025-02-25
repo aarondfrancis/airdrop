@@ -3,11 +3,11 @@
  * @author Aaron Francis <aaron@hammerstone.dev|https://twitter.com/aarondfrancis>
  */
 
-namespace Hammerstone\Airdrop\Concerns;
+namespace AaronFrancis\Airdrop\Concerns;
 
 use Exception;
-use Hammerstone\Airdrop\Drivers\BaseDriver;
-use Hammerstone\Airdrop\HashGenerator;
+use AaronFrancis\Airdrop\Drivers\BaseDriver;
+use AaronFrancis\Airdrop\HashGenerator;
 use Illuminate\Support\Arr;
 
 trait MakesDrivers

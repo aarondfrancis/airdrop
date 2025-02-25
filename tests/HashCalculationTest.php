@@ -3,11 +3,11 @@
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
-namespace Hammerstone\Airdrop\Tests;
+namespace AaronFrancis\Airdrop\Tests;
 
-use Hammerstone\Airdrop\HashGenerator;
-use Hammerstone\Airdrop\Triggers\ConfigTrigger;
-use Hammerstone\Airdrop\Triggers\FileTrigger;
+use AaronFrancis\Airdrop\HashGenerator;
+use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
+use AaronFrancis\Airdrop\Triggers\FileTrigger;
 
 class HashCalculationTest extends BaseTest
 {

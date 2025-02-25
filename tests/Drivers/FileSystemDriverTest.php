@@ -3,11 +3,11 @@
  * @author Aaron Francis <aaron@hammerstone.dev|https://twitter.com/aarondfrancis>
  */
 
-namespace Hammerstone\Airdrop\Tests\Drivers;
+namespace AaronFrancis\Airdrop\Tests\Drivers;
 
-use Hammerstone\Airdrop\Concerns\MakesDrivers;
-use Hammerstone\Airdrop\Tests\BaseTest;
-use Hammerstone\Airdrop\Triggers\FileTrigger;
+use AaronFrancis\Airdrop\Concerns\MakesDrivers;
+use AaronFrancis\Airdrop\Tests\BaseTest;
+use AaronFrancis\Airdrop\Triggers\FileTrigger;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 

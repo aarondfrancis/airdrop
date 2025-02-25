@@ -3,11 +3,11 @@
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
-namespace Hammerstone\Airdrop\Triggers;
+namespace AaronFrancis\Airdrop\Triggers;
 
 use Generator;
-use Hammerstone\Airdrop\Contracts\TriggerContract;
-use Hammerstone\Airdrop\FileSelection;
+use AaronFrancis\Airdrop\Contracts\TriggerContract;
+use AaronFrancis\Airdrop\FileSelection;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 

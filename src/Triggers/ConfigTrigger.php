@@ -3,9 +3,9 @@
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
-namespace Hammerstone\Airdrop\Triggers;
+namespace AaronFrancis\Airdrop\Triggers;
 
-use Hammerstone\Airdrop\Contracts\TriggerContract;
+use AaronFrancis\Airdrop\Contracts\TriggerContract;
 
 class ConfigTrigger implements TriggerContract
 {

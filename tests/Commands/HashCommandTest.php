@@ -3,11 +3,11 @@
  * @author Aaron Francis <aarondfrancis@gmail.com|https://twitter.com/aarondfrancis>
  */
 
-namespace Hammerstone\Airdrop\Tests\Commands;
+namespace AaronFrancis\Airdrop\Tests\Commands;
 
-use Hammerstone\Airdrop\Tests\BaseTest;
-use Hammerstone\Airdrop\Triggers\ConfigTrigger;
-use Hammerstone\Airdrop\Triggers\FileTrigger;
+use AaronFrancis\Airdrop\Tests\BaseTest;
+use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
+use AaronFrancis\Airdrop\Triggers\FileTrigger;
 
 class HashCommandTest extends BaseTest
 {

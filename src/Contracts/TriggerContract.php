@@ -3,7 +3,7 @@
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
-namespace Hammerstone\Airdrop\Contracts;
+namespace AaronFrancis\Airdrop\Contracts;
 
 interface TriggerContract
 {

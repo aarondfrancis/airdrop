@@ -3,9 +3,9 @@
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
-namespace Hammerstone\Airdrop\Commands;
+namespace AaronFrancis\Airdrop\Commands;
 
-use Hammerstone\Airdrop\AirdropServiceProvider;
+use AaronFrancis\Airdrop\AirdropServiceProvider;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 

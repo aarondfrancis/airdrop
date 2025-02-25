@@ -3,10 +3,10 @@
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
-namespace Hammerstone\Airdrop;
+namespace AaronFrancis\Airdrop;
 
 use Exception;
-use Hammerstone\Airdrop\Contracts\TriggerContract;
+use AaronFrancis\Airdrop\Contracts\TriggerContract;
 
 class HashGenerator
 {

@@ -1,9 +1,9 @@
 <?php
 
-use Hammerstone\Airdrop\Drivers\FilesystemDriver;
-use Hammerstone\Airdrop\Drivers\GithubActionsDriver;
-use Hammerstone\Airdrop\Triggers\ConfigTrigger;
-use Hammerstone\Airdrop\Triggers\FileTrigger;
+use AaronFrancis\Airdrop\Drivers\FilesystemDriver;
+use AaronFrancis\Airdrop\Drivers\GithubActionsDriver;
+use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
+use AaronFrancis\Airdrop\Triggers\FileTrigger;
 
 return [
     // The driver you wish to use to stash and restore your files.

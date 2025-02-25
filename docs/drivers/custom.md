@@ -6,7 +6,7 @@ Your custom driver must extend the Hammerstone `BaseDriver`.
 
 CustomDriver.php {.filename}
 ```php
-use Hammerstone\Airdrop\Drivers\BaseDriver;
+use AaronFrancis\Airdrop\Drivers\BaseDriver;
 
 class CustomDriver extends BaseDriver 
 {

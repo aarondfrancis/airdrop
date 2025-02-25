@@ -3,9 +3,9 @@
  * @author Aaron Francis <aaron@hammerstone.dev|https://twitter.com/aarondfrancis>
  */
 
-namespace Hammerstone\Airdrop\Tests;
+namespace AaronFrancis\Airdrop\Tests;
 
-use Hammerstone\Airdrop\AirdropServiceProvider;
+use AaronFrancis\Airdrop\AirdropServiceProvider;
 use Illuminate\Support\Facades\File;
 use Orchestra\Testbench\TestCase;
 

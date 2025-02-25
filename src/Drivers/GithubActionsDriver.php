@@ -3,7 +3,7 @@
  * @author Aaron Francis <aarondfrancis@gmail.com|https://twitter.com/aarondfrancis>
  */
 
-namespace Hammerstone\Airdrop\Drivers;
+namespace AaronFrancis\Airdrop\Drivers;
 
 class GithubActionsDriver extends FilesystemDriver
 {

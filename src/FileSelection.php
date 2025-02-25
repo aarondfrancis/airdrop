@@ -8,7 +8,7 @@
  * @see https://github.com/spatie/laravel-backup/blob/master/src/Tasks/Backup/FileSelection.php
  */
 
-namespace Hammerstone\Airdrop;
+namespace AaronFrancis\Airdrop;
 
 use Illuminate\Support\Str;
 use Symfony\Component\Finder\Finder;

@@ -3,10 +3,10 @@
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
-namespace Hammerstone\Airdrop\Tests\Triggers;
+namespace AaronFrancis\Airdrop\Tests\Triggers;
 
-use Hammerstone\Airdrop\Tests\BaseTest;
-use Hammerstone\Airdrop\Triggers\FileTrigger;
+use AaronFrancis\Airdrop\Tests\BaseTest;
+use AaronFrancis\Airdrop\Triggers\FileTrigger;
 
 class InputFilesTriggerTest extends BaseTest
 {

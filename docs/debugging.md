@@ -23,10 +23,10 @@ When you call `aidrop:debug`, the following will be printed to your console:
 
 ```json
 {
-    "Hammerstone\\Airdrop\\Triggers\\ConfigTrigger": {
+    "AaronFrancis\\Airdrop\\Triggers\\ConfigTrigger": {
         "env": "production"
     },
-    "Hammerstone\\Airdrop\\Triggers\\FileTrigger": {
+    "AaronFrancis\\Airdrop\\Triggers\\FileTrigger": {
         "package-lock.json": "62f6d1bfc836a1536c4869fe8f78249b"
     }
 }
@@ -35,13 +35,13 @@ When you call `aidrop:debug`, the following will be printed to your console:
 If you want to narrow it down to a single trigger, you can pass that through with the `--trigger` option:
 
 ```bash
-php artisan airdrop:debug --trigger=Hammerstone\\Airdrop\\Triggers\\ConfigTrigger
+php artisan airdrop:debug --trigger=AaronFrancis\\Airdrop\\Triggers\\ConfigTrigger
 ```
 
 Then you'll _only_ get output for the config trigger:
 ```json
 {
-    "Hammerstone\\Airdrop\\Triggers\\ConfigTrigger": {
+    "AaronFrancis\\Airdrop\\Triggers\\ConfigTrigger": {
         "env": "production"
     }
 }

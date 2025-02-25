@@ -3,10 +3,10 @@
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
-namespace Hammerstone\Airdrop\Drivers;
+namespace AaronFrancis\Airdrop\Drivers;
 
 use Exception;
-use Hammerstone\Airdrop\FileSelection;
+use AaronFrancis\Airdrop\FileSelection;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;

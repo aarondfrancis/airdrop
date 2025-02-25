@@ -3,9 +3,9 @@
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
-namespace Hammerstone\Airdrop\Commands;
+namespace AaronFrancis\Airdrop\Commands;
 
-use Hammerstone\Airdrop\Concerns\MakesDrivers;
+use AaronFrancis\Airdrop\Concerns\MakesDrivers;
 use Illuminate\Console\Command;
 
 class Download extends Command

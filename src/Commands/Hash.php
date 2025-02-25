@@ -3,9 +3,9 @@
  * @author Aaron Francis <aaron@hammerstone.dev>
  */
 
-namespace Hammerstone\Airdrop\Commands;
+namespace AaronFrancis\Airdrop\Commands;
 
-use Hammerstone\Airdrop\HashGenerator;
+use AaronFrancis\Airdrop\HashGenerator;
 use Illuminate\Console\Command;
 
 class Hash extends Command
