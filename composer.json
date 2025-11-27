@@ -18,7 +18,7 @@
     "require-dev": {
         "laravel/pint": "^1.0",
         "mockery/mockery": "^1.6",
-        "orchestra/testbench": "^8.21|^9.0|^10.0",
+        "orchestra/testbench": "^8.21|^9.2|^10.0",
         "phpunit/phpunit": "^10.5|^11.0"
     },
     "autoload": {
