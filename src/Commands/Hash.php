@@ -15,7 +15,7 @@ class Hash extends Command
 
     protected $description = 'Output the calculated hash.';
 
-    public function handle()
+    public function handle(): void
     {
         $hash = HashGenerator::make()->generate();
 

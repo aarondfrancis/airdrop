@@ -8,19 +8,19 @@ namespace AaronFrancis\Airdrop\Drivers;
 
 class GithubActionsDriver extends FilesystemDriver
 {
-    public function exists()
+    public function exists(): bool
     {
         return file_exists($this->localStashPath() . $this->stashedPackageFilename());
     }
 
-    protected function downloadFromRemoteStorage($zipPath)
+    protected function downloadFromRemoteStorage(string $zipPath): void
     {
         // For GitHub actions there is no downloading required.
         // The file will be placed in the appropriate location
         // by the Cache step of the workflow.
     }
 
-    protected function uploadToRemoteStorage($zipPath)
+    protected function uploadToRemoteStorage(string $zipPath): void
     {
         // No upload is required  either. GitHub will take the
         // zip from the tmp directory and cache it for us for

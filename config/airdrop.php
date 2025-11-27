@@ -73,9 +73,9 @@ return [
                 // this makes the most sense and doesn't need to be changed.
                 resource_path(),
 
-                // Any time the webpack.mix.js file is changed, it could affect the
+                // Any time the vite.config.js file is changed, it could affect
                 // the build steps, and therefore the built files.
-                base_path('webpack.mix.js'),
+                base_path('vite.config.js'),
 
                 // Depending on your package manager, you'll want to uncomment one
                 // of the following lines. Whenever JS packages are updated or
@@ -120,14 +120,11 @@ return [
          * Files or folders that should be included.
          */
         'include' => [
-            // The mix-manifest file tells Laravel how to get your versioned assets.
-            public_path('mix-manifest.json'),
+            // The Vite manifest file tells Laravel how to get your versioned assets.
+            public_path('build/manifest.json'),
 
-            // Compiled CSS.
-            public_path('css'),
-
-            // Compiled JS.
-            public_path('js'),
+            // Compiled assets from Vite.
+            public_path('build/assets'),
         ],
 
         /*

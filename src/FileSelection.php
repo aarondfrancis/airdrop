@@ -15,86 +15,52 @@ use Symfony\Component\Finder\Finder;
 
 class FileSelection
 {
-    /**
-     * @var \Illuminate\Support\Collection
-     */
-    protected $includeFilesAndDirectories;
+    protected \Illuminate\Support\Collection $includeFilesAndDirectories;
 
-    /**
-     * @var \Illuminate\Support\Collection
-     */
-    protected $excludeFilesAndDirectories;
+    protected \Illuminate\Support\Collection $excludeFilesAndDirectories;
 
-    /**
-     * @var array
-     */
-    protected $excludeNames = [];
+    protected array $excludeNames = [];
 
-    /**
-     * @var bool
-     */
-    protected $shouldFollowLinks = false;
+    protected bool $shouldFollowLinks = false;
 
-    /**
-     * @param  array  $include
-     * @param  array  $exclude
-     * @return FileSelection
-     */
-    public static function create($include = [], $exclude = [])
+    public static function create(array $include = [], array $exclude = []): static
     {
         return new static($include, $exclude);
     }
 
-    /**
-     * @param  array  $include
-     * @param  array  $exclude
-     */
-    public function __construct($include = [], $exclude = [])
+    public function __construct(array $include = [], array $exclude = [])
     {
         $this->includeFilesAndDirectories = collect($include);
         $this->excludeFilesAndDirectories = collect($exclude);
     }
 
-    /**
-     * @param  array  $patterns
-     * @return FileSelection
-     */
-    public function excludeNames($patterns)
+    public function excludeNames(array $patterns): static
     {
         $this->excludeNames = $patterns;
 
         return $this;
     }
 
-    /**
-     * Do not included the given files and directories.
-     *
-     * @param  array|string  $excludeFilesAndDirectories
-     * @return FileSelection
-     */
-    public function excludeFilesFrom($excludeFilesAndDirectories)
+    public function excludeFilesFrom(array|string $excludeFilesAndDirectories): static
     {
         $this->excludeFilesAndDirectories = $this->excludeFilesAndDirectories->merge($this->sanitize($excludeFilesAndDirectories));
 
         return $this;
     }
 
-    public function shouldFollowLinks(bool $shouldFollowLinks)
+    public function shouldFollowLinks(bool $shouldFollowLinks): static
     {
         $this->shouldFollowLinks = $shouldFollowLinks;
 
         return $this;
     }
 
-    public function selected()
+    public function selected(): \Illuminate\Support\Collection
     {
         return collect($this->yieldSelectedFiles())->diff($this->excludeFilesAndDirectories);
     }
 
-    /**
-     * @return \Generator|string[]
-     */
-    protected function yieldSelectedFiles()
+    protected function yieldSelectedFiles(): \Generator|array
     {
         if ($this->includeFilesAndDirectories->isEmpty()) {
             return [];
@@ -129,7 +95,7 @@ class FileSelection
         }
     }
 
-    protected function includedFiles()
+    protected function includedFiles(): array
     {
         return $this->includeFilesAndDirectories
             ->each(function ($path) {
@@ -143,7 +109,7 @@ class FileSelection
             ->toArray();
     }
 
-    protected function includedDirectories()
+    protected function includedDirectories(): array
     {
         return $this->includeFilesAndDirectories
             ->each(function ($path) {
@@ -168,11 +134,7 @@ class FileSelection
         return false;
     }
 
-    /**
-     * @param  string|array  $paths
-     * @return \Illuminate\Support\Collection
-     */
-    protected function sanitize($paths)
+    protected function sanitize(array|string $paths): \Illuminate\Support\Collection
     {
         return collect($paths)
             ->reject(function ($path) {

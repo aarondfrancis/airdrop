@@ -17,7 +17,7 @@ class Download extends Command
 
     protected $description = 'Run as a part of your deploy pipeline *before* assets are built.';
 
-    public function handle()
+    public function handle(): void
     {
         config([
             'airdrop.verbose' => $this->option('verbose')

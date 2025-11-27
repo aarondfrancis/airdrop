@@ -8,42 +8,32 @@ namespace AaronFrancis\Airdrop\Drivers;
 
 abstract class BaseDriver
 {
-    /**
-     * Config for this specific driver.
-     *
-     * @var array
-     */
-    protected $config;
+    protected array $config = [];
 
-    /**
-     * Current hash based on all inputs.
-     *
-     * @var string
-     */
-    protected $hash;
+    protected string $hash = '';
 
-    public function setConfig($config)
+    public function setConfig(array $config): static
     {
         $this->config = $config;
 
         return $this;
     }
 
-    public function setCurrentHash($hash)
+    public function setCurrentHash(string $hash): static
     {
         $this->hash = $hash;
 
         return $this;
     }
 
-    public function output($line)
+    public function output(string $line): void
     {
         if (config('airdrop.verbose')) {
             echo "[Airdrop] $line\n";
         }
     }
 
-    abstract public function download();
+    abstract public function download(): void;
 
-    abstract public function upload();
+    abstract public function upload(): void;
 }

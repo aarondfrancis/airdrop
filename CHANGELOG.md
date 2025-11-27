@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.1.0 - 2025-11-27
+
+### Added
+- PHP 8.4 support
+
+### Changed
+- Default config now uses Vite instead of Laravel Mix (`vite.config.js`, `build/manifest.json`, `build/assets`)
+- Modernized codebase with strict PHP typing (return types, parameter types, property types)
+
+### Removed
+- PHP 8.1 support (EOL November 2024)
+
 ## 0.2.3 - 2022-02-15
 - Added: Support for Laravel 9
 
