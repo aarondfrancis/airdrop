@@ -166,7 +166,8 @@ class FilesystemDriver extends BaseDriver
     {
         $dir = Arr::get($this->config, 'remote_directory');
 
-        return $dir ? Str::finish($dir, '/') : $dir;
+        return $dir ? Str::finish($dir, '/') : '';
+    }
     }
 
     protected function localStashPath(): string
