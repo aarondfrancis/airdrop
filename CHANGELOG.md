@@ -1,5 +1,22 @@
 # Changelog
 
+## Unreleased
+
+### Added
+- PHP 8.4 support in CI test matrix
+
+### Changed
+- Default config now uses Vite instead of Laravel Mix (`vite.config.js`, `build/manifest.json`, `build/assets`)
+- Modernized codebase with strict PHP typing (return types, parameter types, property types)
+- Updated minimum dev dependency versions for PHPUnit 10+ compatibility
+- CI workflow now uses local Pint instead of global installation
+
+### Removed
+- Support for PHPUnit 8 and 9
+- Support for Orchestra Testbench < 8.21 and < 9.2
+- Unused MySQL service from CI workflow
+- Legacy test script
+
 ## 0.2.3 - 2022-02-15
 - Added: Support for Laravel 9
 
