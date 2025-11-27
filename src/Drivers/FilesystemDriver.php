@@ -168,7 +168,6 @@ class FilesystemDriver extends BaseDriver
 
         return $dir ? Str::finish($dir, '/') : '';
     }
-    }
 
     protected function localStashPath(): string
     {
