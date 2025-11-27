@@ -13,12 +13,7 @@ use Illuminate\Support\Arr;
 
 trait MakesDrivers
 {
-    /**
-     * @return BaseDriver
-     *
-     * @throws Exception
-     */
-    public function makeDriver()
+    public function makeDriver(): BaseDriver
     {
         $config = $this->getDriverConfig();
 
@@ -30,10 +25,7 @@ trait MakesDrivers
         return $class->setConfig($config)->setCurrentHash(HashGenerator::make()->generate());
     }
 
-    /**
-     * @return string|null
-     */
-    public function getDriverConfig()
+    public function getDriverConfig(): ?array
     {
         $driver = config('airdrop.driver') ?? 'DRIVER_NOT_SET';
         $drivers = config('airdrop.drivers');
@@ -41,10 +33,7 @@ trait MakesDrivers
         return Arr::get($drivers, $driver);
     }
 
-    /**
-     * @throws Exception
-     */
-    protected function ensureDriverExtendsBase($driver)
+    protected function ensureDriverExtendsBase(mixed $driver): void
     {
         if (!is_subclass_of($driver, BaseDriver::class)) {
             throw new Exception('Airdrop drivers must extend ' . json_encode(BaseDriver::class));

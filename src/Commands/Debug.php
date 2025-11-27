@@ -7,8 +7,8 @@
 namespace AaronFrancis\Airdrop\Commands;
 
 use AaronFrancis\Airdrop\HashGenerator;
-use Arr;
 use Illuminate\Console\Command;
+use Illuminate\Support\Arr;
 
 class Debug extends Command
 {
@@ -16,7 +16,7 @@ class Debug extends Command
 
     protected $description = 'Output the array of all triggers, or a specific trigger.';
 
-    public function handle()
+    public function handle(): void
     {
         $output = HashGenerator::make()->asArray();
 

@@ -11,9 +11,9 @@ use Exception;
 
 class HashGenerator
 {
-    protected $triggers = [];
+    protected array $triggers = [];
 
-    public static function make()
+    public static function make(): static
     {
         return new static;
     }
@@ -31,22 +31,12 @@ class HashGenerator
         }
     }
 
-    /**
-     * @return string
-     *
-     * @throws Exception
-     */
-    public function generate()
+    public function generate(): string
     {
         return md5(json_encode($this->asArray()));
     }
 
-    /**
-     * @return array
-     *
-     * @throws Exception
-     */
-    public function asArray()
+    public function asArray(): array
     {
         $contents = [];
 
@@ -64,10 +54,7 @@ class HashGenerator
         return $contents;
     }
 
-    /**
-     * @throws Exception
-     */
-    protected function ensureContractImplemented($class)
+    protected function ensureContractImplemented(string $class): void
     {
         if (!array_key_exists(TriggerContract::class, class_implements($class))) {
             throw new Exception('Airdrop triggers must implement contract ' . json_encode(TriggerContract::class));

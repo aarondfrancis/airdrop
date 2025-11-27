@@ -8,20 +8,12 @@ namespace AaronFrancis\Airdrop\Triggers;
 
 use AaronFrancis\Airdrop\Contracts\TriggerContract;
 use AaronFrancis\Airdrop\FileSelection;
-use Generator;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 
 class FileTrigger implements TriggerContract
 {
-    /**
-     * Return any state that should be considered when determining
-     * whether or not your build process needs to run again.
-     *
-     * @param  array  $config
-     * @return array
-     */
-    public function triggerBuildWhenChanged($config = [])
+    public function triggerBuildWhenChanged(array $config = []): array
     {
         $include = Arr::get($config, 'include', []);
         $exclude = Arr::get($config, 'exclude', []);
@@ -44,10 +36,7 @@ class FileTrigger implements TriggerContract
             ->toArray();
     }
 
-    /**
-     * @return Generator
-     */
-    protected function files($include, $exclude, $excludeNames)
+    protected function files(array $include, array $exclude, array $excludeNames): \Illuminate\Support\Collection
     {
         return FileSelection::create($include, $exclude)
             ->excludeNames($excludeNames)

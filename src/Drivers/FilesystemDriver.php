@@ -16,10 +16,7 @@ use ZipArchive;
 
 class FilesystemDriver extends BaseDriver
 {
-    /**
-     * Called after building, to stash the files somewhere.
-     */
-    public function upload()
+    public function upload(): void
     {
         // Remove the skip file that `restore` might have created.
         File::delete($this->skipFilePath());
@@ -41,11 +38,7 @@ class FilesystemDriver extends BaseDriver
         $this->uploadToRemoteStorage($zipPath);
     }
 
-    /**
-     * Called before building files, to see if we can skip that
-     * altogether and just download them.
-     */
-    public function download()
+    public function download(): void
     {
         if ($this->extract()) {
             $this->output('Assets downloaded and extracted.');
@@ -61,10 +54,7 @@ class FilesystemDriver extends BaseDriver
         }
     }
 
-    /**
-     * @throws Exception
-     */
-    public function makeZip($path)
+    public function makeZip(string $path): void
     {
         $zip = new ZipArchive;
 
@@ -85,7 +75,7 @@ class FilesystemDriver extends BaseDriver
         $zip->close();
     }
 
-    public function extract()
+    public function extract(): bool
     {
         if (!$this->exists()) {
             return false;
@@ -118,7 +108,7 @@ class FilesystemDriver extends BaseDriver
         return true;
     }
 
-    public function files()
+    public function files(): \Illuminate\Support\Collection
     {
         $include = config('airdrop.outputs.include') ?? [];
         $exclude = config('airdrop.outputs.exclude') ?? [];
@@ -129,44 +119,27 @@ class FilesystemDriver extends BaseDriver
             ->selected();
     }
 
-    /**
-     * @return \Illuminate\Contracts\Filesystem\Filesystem
-     */
-    public function disk()
+    public function disk(): \Illuminate\Contracts\Filesystem\Filesystem
     {
         return Storage::disk($this->config['disk']);
     }
 
-    /**
-     * @return bool
-     */
-    public function exists()
+    public function exists(): bool
     {
         return $this->disk()->exists($this->remoteStashPath() . $this->stashedPackageFilename());
     }
 
-    /**
-     * @return string
-     */
-    protected function skipFilePath()
+    protected function skipFilePath(): string
     {
         return Arr::get($this->config, 'skip_file');
     }
 
-    /**
-     * @return string
-     */
-    protected function stashedPackageFilename()
+    protected function stashedPackageFilename(): string
     {
         return "airdrop-{$this->hash}.zip";
     }
 
-    /**
-     * @param  string  $zipPath
-     *
-     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
-     */
-    protected function downloadFromRemoteStorage($zipPath)
+    protected function downloadFromRemoteStorage(string $zipPath): void
     {
         // Download the file to local disk as a stream.
         File::put(
@@ -175,10 +148,7 @@ class FilesystemDriver extends BaseDriver
         );
     }
 
-    /**
-     * @param  string  $zipPath
-     */
-    protected function uploadToRemoteStorage($zipPath)
+    protected function uploadToRemoteStorage(string $zipPath): void
     {
         $this->output('Uploading to remote disk at ' . $this->remoteStashPath() . $this->stashedPackageFilename());
 
@@ -192,20 +162,14 @@ class FilesystemDriver extends BaseDriver
         File::delete($zipPath);
     }
 
-    /**
-     * @return string
-     */
-    protected function remoteStashPath()
+    protected function remoteStashPath(): string
     {
         $dir = Arr::get($this->config, 'remote_directory');
 
         return $dir ? Str::finish($dir, '/') : $dir;
     }
 
-    /**
-     * @return string
-     */
-    protected function localStashPath()
+    protected function localStashPath(): string
     {
         $tmp = Arr::get($this->config, 'local_tmp_directory');
 
