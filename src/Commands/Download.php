@@ -4,9 +4,9 @@
  * @author Aaron Francis <aaron@tryhardstudios.com>
  */
 
-namespace AaronFrancis\Airdrop\Commands;
+namespace WilberGroup\Airdrop\Commands;
 
-use AaronFrancis\Airdrop\Concerns\MakesDrivers;
+use WilberGroup\Airdrop\Concerns\MakesDrivers;
 use Illuminate\Console\Command;
 
 class Download extends Command

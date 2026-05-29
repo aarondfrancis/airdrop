@@ -4,13 +4,13 @@
  * @author Aaron Francis <aaron@tryhardstudios.com>
  */
 
-namespace AaronFrancis\Airdrop;
+namespace WilberGroup\Airdrop;
 
-use AaronFrancis\Airdrop\Commands\Debug;
-use AaronFrancis\Airdrop\Commands\Download;
-use AaronFrancis\Airdrop\Commands\Hash;
-use AaronFrancis\Airdrop\Commands\Install;
-use AaronFrancis\Airdrop\Commands\Upload;
+use WilberGroup\Airdrop\Commands\Debug;
+use WilberGroup\Airdrop\Commands\Download;
+use WilberGroup\Airdrop\Commands\Hash;
+use WilberGroup\Airdrop\Commands\Install;
+use WilberGroup\Airdrop\Commands\Upload;
 use Illuminate\Support\ServiceProvider;
 
 class AirdropServiceProvider extends ServiceProvider

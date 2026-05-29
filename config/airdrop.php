@@ -1,9 +1,9 @@
 <?php
 
-use AaronFrancis\Airdrop\Drivers\FilesystemDriver;
-use AaronFrancis\Airdrop\Drivers\GithubActionsDriver;
-use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
-use AaronFrancis\Airdrop\Triggers\FileTrigger;
+use WilberGroup\Airdrop\Drivers\FilesystemDriver;
+use WilberGroup\Airdrop\Drivers\GithubActionsDriver;
+use WilberGroup\Airdrop\Triggers\ConfigTrigger;
+use WilberGroup\Airdrop\Triggers\FileTrigger;
 
 return [
     // The driver you wish to use to stash and restore your files.

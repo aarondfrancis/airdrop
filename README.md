@@ -1,8 +1,8 @@
 # Airdrop for Laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/aaronfrancis/airdrop)](https://packagist.org/packages/aaronfrancis/airdrop)
-[![Total Downloads](https://img.shields.io/packagist/dt/aaronfrancis/airdrop)](https://packagist.org/packages/aaronfrancis/airdrop)
-[![License](https://img.shields.io/packagist/l/aaronfrancis/airdrop)](https://packagist.org/packages/aaronfrancis/airdrop)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/wilbergroup/airdrop)](https://packagist.org/packages/wilbergroup/airdrop)
+[![Total Downloads](https://img.shields.io/packagist/dt/wilbergroup/airdrop)](https://packagist.org/packages/wilbergroup/airdrop)
+[![License](https://img.shields.io/packagist/l/wilbergroup/airdrop)](https://packagist.org/packages/wilbergroup/airdrop)
 
 > Read the full docs at [hammerstone.dev/airdrop/docs](https://hammerstone.dev/airdrop/docs/main/overview).
 
@@ -17,7 +17,7 @@ After Airdrop has calculated a hash for these inputs, it will check to see if it
 
 You can install the package via Composer
 ```console
-composer require aaronfrancis/airdrop
+composer require wilbergroup/airdrop
 ```
 
 Once the package is installed, you may optionally publish the config file by running 
@@ -32,17 +32,6 @@ Read the full docs at [hammerstone.dev/airdrop/docs](https://hammerstone.dev/air
 ## License
 
 The MIT License (MIT).
-
-## Support
-
-This is free! If you want to support me:
-
-- Sponsor my open source work: [aaronfrancis.com/backstage](https://aaronfrancis.com/backstage)
-- Check out my courses:
-    - [Mastering Postgres](https://masteringpostgres.com)
-    - [High Performance SQLite](https://highperformancesqlite.com)
-    - [Screencasting](https://screencasting.com)
-- Help spread the word about things I make
 
 ## Credits
 

@@ -4,10 +4,10 @@
  * @author Aaron Francis <aaron@tryhardstudios.com>
  */
 
-namespace AaronFrancis\Airdrop\Triggers;
+namespace WilberGroup\Airdrop\Triggers;
 
-use AaronFrancis\Airdrop\Contracts\TriggerContract;
-use AaronFrancis\Airdrop\FileSelection;
+use WilberGroup\Airdrop\Contracts\TriggerContract;
+use WilberGroup\Airdrop\FileSelection;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 

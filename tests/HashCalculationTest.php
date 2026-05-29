@@ -4,11 +4,11 @@
  * @author Aaron Francis <aaron@tryhardstudios.com>
  */
 
-namespace AaronFrancis\Airdrop\Tests;
+namespace WilberGroup\Airdrop\Tests;
 
-use AaronFrancis\Airdrop\HashGenerator;
-use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
-use AaronFrancis\Airdrop\Triggers\FileTrigger;
+use WilberGroup\Airdrop\HashGenerator;
+use WilberGroup\Airdrop\Triggers\ConfigTrigger;
+use WilberGroup\Airdrop\Triggers\FileTrigger;
 use PHPUnit\Framework\Attributes\Test;
 
 class HashCalculationTest extends BaseTest

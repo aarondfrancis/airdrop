@@ -4,7 +4,7 @@
  * @author Aaron Francis <aarondfrancis@gmail.com|https://twitter.com/aarondfrancis>
  */
 
-namespace AaronFrancis\Airdrop\Drivers;
+namespace WilberGroup\Airdrop\Drivers;
 
 class GithubActionsDriver extends FilesystemDriver
 {

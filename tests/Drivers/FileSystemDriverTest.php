@@ -4,11 +4,11 @@
  * @author Aaron Francis <aaron@tryhardstudios.com|https://twitter.com/aarondfrancis>
  */
 
-namespace AaronFrancis\Airdrop\Tests\Drivers;
+namespace WilberGroup\Airdrop\Tests\Drivers;
 
-use AaronFrancis\Airdrop\Concerns\MakesDrivers;
-use AaronFrancis\Airdrop\Tests\BaseTest;
-use AaronFrancis\Airdrop\Triggers\FileTrigger;
+use WilberGroup\Airdrop\Concerns\MakesDrivers;
+use WilberGroup\Airdrop\Tests\BaseTest;
+use WilberGroup\Airdrop\Triggers\FileTrigger;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use PHPUnit\Framework\Attributes\Test;

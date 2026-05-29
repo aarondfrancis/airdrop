@@ -6,7 +6,7 @@ Your custom driver must extend the `BaseDriver`.
 
 CustomDriver.php {.filename}
 ```php
-use AaronFrancis\Airdrop\Drivers\BaseDriver;
+use WilberGroup\Airdrop\Drivers\BaseDriver;
 
 class CustomDriver extends BaseDriver 
 {

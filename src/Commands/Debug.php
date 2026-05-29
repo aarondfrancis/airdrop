@@ -4,9 +4,9 @@
  * @author Aaron Francis <aaron@tryhardstudios.com>
  */
 
-namespace AaronFrancis\Airdrop\Commands;
+namespace WilberGroup\Airdrop\Commands;
 
-use AaronFrancis\Airdrop\HashGenerator;
+use WilberGroup\Airdrop\HashGenerator;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 

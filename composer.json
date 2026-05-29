@@ -1,5 +1,5 @@
 {
-    "name": "aaronfrancis/airdrop",
+    "name": "wilbergroup/airdrop",
     "description": "A Laravel package to deploy your application faster by skipping asset compilation when possible.",
     "type": "library",
     "license": "MIT",
@@ -23,18 +23,18 @@
     },
     "autoload": {
         "psr-4": {
-            "AaronFrancis\\Airdrop\\": "src/"
+            "WilberGroup\\Airdrop\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AaronFrancis\\Airdrop\\Tests\\": "tests/"
+            "WilberGroup\\Airdrop\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "AaronFrancis\\Airdrop\\AirdropServiceProvider"
+                "WilberGroup\\Airdrop\\AirdropServiceProvider"
             ]
         }
     }

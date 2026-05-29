@@ -4,11 +4,11 @@
  * @author Aaron Francis <aarondfrancis@gmail.com|https://twitter.com/aarondfrancis>
  */
 
-namespace AaronFrancis\Airdrop\Tests\Commands;
+namespace WilberGroup\Airdrop\Tests\Commands;
 
-use AaronFrancis\Airdrop\Tests\BaseTest;
-use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
-use AaronFrancis\Airdrop\Triggers\FileTrigger;
+use WilberGroup\Airdrop\Tests\BaseTest;
+use WilberGroup\Airdrop\Triggers\ConfigTrigger;
+use WilberGroup\Airdrop\Triggers\FileTrigger;
 use PHPUnit\Framework\Attributes\Test;
 
 class HashCommandTest extends BaseTest
