@@ -9,6 +9,9 @@
             "email": "aaron@tryhardstudios.com"
         }
     ],
+    "replace": {
+        "aaronfrancis/airdrop": "self.version"
+    },
     "require": {
         "php": "^8.2",
         "illuminate/support": "^10.0|^11.0|^12.0",
