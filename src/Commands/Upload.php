@@ -1,8 +1,8 @@
 <?php
 
-namespace AaronFrancis\Airdrop\Commands;
+namespace WilberGroup\Airdrop\Commands;
 
-use AaronFrancis\Airdrop\Concerns\MakesDrivers;
+use WilberGroup\Airdrop\Concerns\MakesDrivers;
 use Illuminate\Console\Command;
 
 class Upload extends Command

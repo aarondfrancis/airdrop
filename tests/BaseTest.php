@@ -4,9 +4,9 @@
  * @author Aaron Francis <aaron@tryhardstudios.com|https://twitter.com/aarondfrancis>
  */
 
-namespace AaronFrancis\Airdrop\Tests;
+namespace WilberGroup\Airdrop\Tests;
 
-use AaronFrancis\Airdrop\AirdropServiceProvider;
+use WilberGroup\Airdrop\AirdropServiceProvider;
 use Illuminate\Support\Facades\File;
 use Orchestra\Testbench\TestCase;
 

@@ -4,11 +4,11 @@
  * @author Aaron Francis <aarondfrancis@gmail.com|https://twitter.com/aarondfrancis>
  */
 
-namespace AaronFrancis\Airdrop\Tests\Commands;
+namespace WilberGroup\Airdrop\Tests\Commands;
 
-use AaronFrancis\Airdrop\Tests\BaseTest;
-use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
-use AaronFrancis\Airdrop\Triggers\FileTrigger;
+use WilberGroup\Airdrop\Tests\BaseTest;
+use WilberGroup\Airdrop\Triggers\ConfigTrigger;
+use WilberGroup\Airdrop\Triggers\FileTrigger;
 use PHPUnit\Framework\Attributes\Test;
 
 class HashCommandTest extends BaseTest
@@ -32,7 +32,7 @@ class HashCommandTest extends BaseTest
     public function test_all_triggers_output()
     {
         $this->artisan('airdrop:hash')
-            ->expectsOutput('52b0daab48aded4aab3fc7e03af2d128')
+            ->expectsOutput('7781a12dacd61e881f3be5b39b0161cb')
             ->assertExitCode(0);
     }
 
@@ -40,7 +40,7 @@ class HashCommandTest extends BaseTest
     public function test_all_triggers_output_w_prefix()
     {
         $this->artisan('airdrop:hash --prefix=foobar-')
-            ->expectsOutput('foobar-52b0daab48aded4aab3fc7e03af2d128')
+            ->expectsOutput('foobar-7781a12dacd61e881f3be5b39b0161cb')
             ->assertExitCode(0);
     }
 
@@ -50,9 +50,9 @@ class HashCommandTest extends BaseTest
         $this->assertEquals('', getenv('AIRDROP_HASH'));
 
         $this->artisan('airdrop:hash --prefix=foobar- --putenv=AIRDROP_HASH')
-            ->expectsOutput('foobar-52b0daab48aded4aab3fc7e03af2d128')
+            ->expectsOutput('foobar-7781a12dacd61e881f3be5b39b0161cb')
             ->assertExitCode(0);
 
-        $this->assertEquals('foobar-52b0daab48aded4aab3fc7e03af2d128', getenv('AIRDROP_HASH'));
+        $this->assertEquals('foobar-7781a12dacd61e881f3be5b39b0161cb', getenv('AIRDROP_HASH'));
     }
 }

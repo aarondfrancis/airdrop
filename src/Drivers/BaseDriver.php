@@ -4,7 +4,7 @@
  * @author Aaron Francis <aaron@tryhardstudios.com>
  */
 
-namespace AaronFrancis\Airdrop\Drivers;
+namespace WilberGroup\Airdrop\Drivers;
 
 abstract class BaseDriver
 {

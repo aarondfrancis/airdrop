@@ -4,10 +4,10 @@
  * @author Aaron Francis <aaron@tryhardstudios.com|https://twitter.com/aarondfrancis>
  */
 
-namespace AaronFrancis\Airdrop\Concerns;
+namespace WilberGroup\Airdrop\Concerns;
 
-use AaronFrancis\Airdrop\Drivers\BaseDriver;
-use AaronFrancis\Airdrop\HashGenerator;
+use WilberGroup\Airdrop\Drivers\BaseDriver;
+use WilberGroup\Airdrop\HashGenerator;
 use Exception;
 use Illuminate\Support\Arr;
 

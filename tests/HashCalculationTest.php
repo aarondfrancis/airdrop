@@ -4,11 +4,11 @@
  * @author Aaron Francis <aaron@tryhardstudios.com>
  */
 
-namespace AaronFrancis\Airdrop\Tests;
+namespace WilberGroup\Airdrop\Tests;
 
-use AaronFrancis\Airdrop\HashGenerator;
-use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
-use AaronFrancis\Airdrop\Triggers\FileTrigger;
+use WilberGroup\Airdrop\HashGenerator;
+use WilberGroup\Airdrop\Triggers\ConfigTrigger;
+use WilberGroup\Airdrop\Triggers\FileTrigger;
 use PHPUnit\Framework\Attributes\Test;
 
 class HashCalculationTest extends BaseTest
@@ -34,7 +34,7 @@ class HashCalculationTest extends BaseTest
 
         $hash = (new HashGenerator)->generate();
 
-        $this->assertEquals('0cf3788c521e4652ad2ad39ffd7974ec', $hash);
+        $this->assertEquals('315da343a2b1c360838360c8b0f3576a', $hash);
     }
 
     #[Test]

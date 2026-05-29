@@ -4,9 +4,9 @@
  * @author Aaron Francis <aaron@tryhardstudios.com>
  */
 
-namespace AaronFrancis\Airdrop\Drivers;
+namespace WilberGroup\Airdrop\Drivers;
 
-use AaronFrancis\Airdrop\FileSelection;
+use WilberGroup\Airdrop\FileSelection;
 use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;

@@ -3,7 +3,7 @@
 
 You can install the package via Composer
 ```text
-composer require aaronfrancis/airdrop
+composer require wilbergroup/airdrop
 ```
 
 Once the package is installed, you may optionally publish the config file by running 

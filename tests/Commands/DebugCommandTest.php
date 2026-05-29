@@ -4,11 +4,11 @@
  * @author Aaron Francis <aarondfrancis@gmail.com|https://twitter.com/aarondfrancis>
  */
 
-namespace AaronFrancis\Airdrop\Tests\Commands;
+namespace WilberGroup\Airdrop\Tests\Commands;
 
-use AaronFrancis\Airdrop\Tests\BaseTest;
-use AaronFrancis\Airdrop\Triggers\ConfigTrigger;
-use AaronFrancis\Airdrop\Triggers\FileTrigger;
+use WilberGroup\Airdrop\Tests\BaseTest;
+use WilberGroup\Airdrop\Triggers\ConfigTrigger;
+use WilberGroup\Airdrop\Triggers\FileTrigger;
 use PHPUnit\Framework\Attributes\Test;
 
 class DebugCommandTest extends BaseTest
@@ -33,10 +33,10 @@ class DebugCommandTest extends BaseTest
     {
         $expected = <<<EOT
 {
-    "AaronFrancis\\\Airdrop\\\Triggers\\\ConfigTrigger": {
+    "WilberGroup\\\Airdrop\\\Triggers\\\ConfigTrigger": {
         "env": "testing"
     },
-    "AaronFrancis\\\Airdrop\\\Triggers\\\FileTrigger": {
+    "WilberGroup\\\Airdrop\\\Triggers\\\FileTrigger": {
         "\/tests\/Support\/primary-webpack.mix.example": "62f6d1bfc836a1536c4869fe8f78249b"
     }
 }
@@ -52,13 +52,13 @@ EOT;
     {
         $expected = <<<EOT
 {
-    "AaronFrancis\\\Airdrop\\\Triggers\\\ConfigTrigger": {
+    "WilberGroup\\\Airdrop\\\Triggers\\\ConfigTrigger": {
         "env": "testing"
     }
 }
 EOT;
 
-        $this->artisan('airdrop:debug --trigger=AaronFrancis\\\Airdrop\\\Triggers\\\ConfigTrigger')
+        $this->artisan('airdrop:debug --trigger=WilberGroup\\\Airdrop\\\Triggers\\\ConfigTrigger')
             ->expectsOutput($expected)
             ->assertExitCode(0);
     }

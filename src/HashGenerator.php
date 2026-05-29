@@ -4,9 +4,9 @@
  * @author Aaron Francis <aaron@tryhardstudios.com>
  */
 
-namespace AaronFrancis\Airdrop;
+namespace WilberGroup\Airdrop;
 
-use AaronFrancis\Airdrop\Contracts\TriggerContract;
+use WilberGroup\Airdrop\Contracts\TriggerContract;
 use Exception;
 
 class HashGenerator

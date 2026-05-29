@@ -4,7 +4,7 @@
  * @author Aaron Francis <aaron@tryhardstudios.com>
  */
 
-namespace AaronFrancis\Airdrop\Contracts;
+namespace WilberGroup\Airdrop\Contracts;
 
 interface TriggerContract
 {
