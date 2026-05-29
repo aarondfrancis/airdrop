@@ -5,7 +5,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/wilbergroup/airdrop)](https://packagist.org/packages/wilbergroup/airdrop)
 [![License](https://img.shields.io/packagist/l/wilbergroup/airdrop)](https://packagist.org/packages/wilbergroup/airdrop)
 
-> Read the full docs at [hammerstone.dev/airdrop/docs](https://hammerstone.dev/airdrop/docs/main/overview).
+> Read the full docs at [wilbergroup.github.io/airdrop](https://wilbergroup.github.io/airdrop/).
 
 Airdrop for Laravel is a package that speeds up your deploys by skipping your asset build step whenever possible.
 
@@ -28,7 +28,7 @@ php artisan airdrop:install
 
 You'll likely want to publish the config file so that you can set up your triggers and outputs.
 
-Read the full docs at [hammerstone.dev/airdrop/docs](https://hammerstone.dev/airdrop/docs/main/overview).
+Read the full docs at [wilbergroup.github.io/airdrop](https://wilbergroup.github.io/airdrop/).
 
 ## License
 

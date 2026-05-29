@@ -1,6 +1,6 @@
 # Building a Custom Trigger
 
-If the [File](/triggers/file) and [Config](triggers/config) triggers don't meet your needs, you are free to make your own.
+If the [File](/triggers/file) and [Config](/triggers/config) triggers don't meet your needs, you are free to make your own.
 
 Let's imagine we want to trigger an asset rebuild any time the week of the year changes. This will force assets to be built at least once a week, provided we deploy at least once a week.
 

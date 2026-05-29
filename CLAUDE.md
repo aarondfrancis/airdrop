@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Airdrop is a Laravel package that speeds up deployments by skipping asset compilation when possible. It calculates a hash of build inputs (packages, JS/CSS files, ENV vars, etc.) and reuses previously built assets if the configuration hasn't changed.
 
-Full docs: https://hammerstone.dev/airdrop/docs
+Full docs: https://wilbergroup.github.io/airdrop/ (built with Docsify from the `docs/` folder, served via GitHub Pages)
 
 ## Commands
 

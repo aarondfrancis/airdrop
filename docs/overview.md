@@ -9,7 +9,7 @@ When you're deploying your code, Airdrop will calculate a hash of everything nee
 
 After Airdrop has calculated a hash for these inputs, it will check to see if it has ever built this exact configuration before. If it has, it will pull down the built assets and put them in place, letting you skip the expensive build step.
 
-![Flowchart](/flowchart.png){style="width: 698px"}
+<img src="public/flowchart.png" alt="Flowchart" style="width: 698px; max-width: 100%;">
 
 This can reduce the time your deploys and CI runs take from minutes down to just a few seconds:
 
