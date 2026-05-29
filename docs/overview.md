@@ -1,7 +1,7 @@
 
 # Airdrop for Laravel
 
-> View this package on Github [github.com/aarondfrancis/airdrop](https://github.com/aarondfrancis/airdrop).
+> View this package on Github [github.com/WilberGroup/airdrop](https://github.com/WilberGroup/airdrop).
 
 Airdrop for Laravel is a package that speeds up your code deploys by skipping your asset build step whenever possible.
 

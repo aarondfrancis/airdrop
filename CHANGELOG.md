@@ -1,5 +1,35 @@
 # Changelog
 
+## 2.0.0 - Unreleased
+
+This release migrates the package to the Wilber Group organization. **It contains breaking changes** — see the upgrade guide below.
+
+### Changed
+- **Package renamed** from `aaronfrancis/airdrop` to `wilbergroup/airdrop`.
+- **Namespace renamed** from `AaronFrancis\Airdrop` to `WilberGroup\Airdrop`.
+
+### Added
+- Laravel 13 support (`illuminate/*` `^13.0`, `orchestra/testbench` `^11.0`).
+- PHP 8.5 added to the CI test matrix.
+
+### Upgrading from `aaronfrancis/airdrop`
+
+1. Update your dependency:
+   ```bash
+   composer remove aaronfrancis/airdrop
+   composer require wilbergroup/airdrop
+   ```
+   (The new package `replace`s the old one, so a transitional period where both are required resolves cleanly.)
+2. Update references to the old namespace in your application — most commonly in `config/airdrop.php`, where triggers are referenced by class name:
+   ```diff
+   - AaronFrancis\Airdrop\Triggers\FileTrigger::class
+   + WilberGroup\Airdrop\Triggers\FileTrigger::class
+   ```
+3. Update any custom drivers or triggers that extend the package's base classes (`use WilberGroup\Airdrop\...`).
+4. If you pass a fully-qualified trigger class to `airdrop:debug --trigger=`, update that namespace too.
+
+> **Note:** Because trigger class names are part of the build hash, your computed hash changes after upgrading. The first deploy on this version rebuilds assets once, then resumes skipping as normal.
+
 ## 1.1.0 - 2025-11-27
 
 ### Added

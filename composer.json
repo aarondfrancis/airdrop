@@ -7,6 +7,10 @@
         {
             "name": "Aaron Francis",
             "email": "aaron@tryhardstudios.com"
+        },
+        {
+            "name": "Jacob Bennett",
+            "homepage": "https://x.com/jacobbennett"
         }
     ],
     "replace": {
@@ -33,6 +37,10 @@
         "psr-4": {
             "WilberGroup\\Airdrop\\Tests\\": "tests/"
         }
+    },
+    "support": {
+        "issues": "https://github.com/WilberGroup/airdrop/issues",
+        "source": "https://github.com/WilberGroup/airdrop"
     },
     "extra": {
         "laravel": {
