@@ -6,10 +6,11 @@
 
 namespace WilberGroup\Airdrop\Triggers;
 
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\File;
 use WilberGroup\Airdrop\Contracts\TriggerContract;
 use WilberGroup\Airdrop\FileSelection;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\File;
 
 class FileTrigger implements TriggerContract
 {
@@ -36,7 +37,7 @@ class FileTrigger implements TriggerContract
             ->toArray();
     }
 
-    protected function files(array $include, array $exclude, array $excludeNames): \Illuminate\Support\Collection
+    protected function files(array $include, array $exclude, array $excludeNames): Collection
     {
         return FileSelection::create($include, $exclude)
             ->excludeNames($excludeNames)

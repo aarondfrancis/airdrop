@@ -10,14 +10,15 @@
 
 namespace WilberGroup\Airdrop;
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Symfony\Component\Finder\Finder;
 
 class FileSelection
 {
-    protected \Illuminate\Support\Collection $includeFilesAndDirectories;
+    protected Collection $includeFilesAndDirectories;
 
-    protected \Illuminate\Support\Collection $excludeFilesAndDirectories;
+    protected Collection $excludeFilesAndDirectories;
 
     protected array $excludeNames = [];
 
@@ -55,7 +56,7 @@ class FileSelection
         return $this;
     }
 
-    public function selected(): \Illuminate\Support\Collection
+    public function selected(): Collection
     {
         return collect($this->yieldSelectedFiles())->diff($this->excludeFilesAndDirectories);
     }
@@ -134,7 +135,7 @@ class FileSelection
         return false;
     }
 
-    protected function sanitize(array|string $paths): \Illuminate\Support\Collection
+    protected function sanitize(array|string $paths): Collection
     {
         return collect($paths)
             ->reject(function ($path) {

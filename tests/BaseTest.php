@@ -6,9 +6,9 @@
 
 namespace WilberGroup\Airdrop\Tests;
 
-use WilberGroup\Airdrop\AirdropServiceProvider;
 use Illuminate\Support\Facades\File;
 use Orchestra\Testbench\TestCase;
+use WilberGroup\Airdrop\AirdropServiceProvider;
 
 abstract class BaseTest extends TestCase
 {

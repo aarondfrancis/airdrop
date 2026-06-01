@@ -6,9 +6,9 @@
 
 namespace WilberGroup\Airdrop\Commands;
 
-use WilberGroup\Airdrop\AirdropServiceProvider;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
+use WilberGroup\Airdrop\AirdropServiceProvider;
 
 class Install extends Command
 {

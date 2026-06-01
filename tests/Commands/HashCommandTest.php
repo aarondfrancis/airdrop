@@ -6,10 +6,10 @@
 
 namespace WilberGroup\Airdrop\Tests\Commands;
 
+use PHPUnit\Framework\Attributes\Test;
 use WilberGroup\Airdrop\Tests\BaseTest;
 use WilberGroup\Airdrop\Triggers\ConfigTrigger;
 use WilberGroup\Airdrop\Triggers\FileTrigger;
-use PHPUnit\Framework\Attributes\Test;
 
 class HashCommandTest extends BaseTest
 {

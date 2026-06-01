@@ -6,8 +6,8 @@
 
 namespace WilberGroup\Airdrop;
 
-use WilberGroup\Airdrop\Contracts\TriggerContract;
 use Exception;
+use WilberGroup\Airdrop\Contracts\TriggerContract;
 
 class HashGenerator
 {

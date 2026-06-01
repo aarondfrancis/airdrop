@@ -6,10 +6,10 @@
 
 namespace WilberGroup\Airdrop\Tests;
 
+use PHPUnit\Framework\Attributes\Test;
 use WilberGroup\Airdrop\HashGenerator;
 use WilberGroup\Airdrop\Triggers\ConfigTrigger;
 use WilberGroup\Airdrop\Triggers\FileTrigger;
-use PHPUnit\Framework\Attributes\Test;
 
 class HashCalculationTest extends BaseTest
 {

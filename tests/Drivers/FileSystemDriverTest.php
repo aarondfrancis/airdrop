@@ -6,12 +6,12 @@
 
 namespace WilberGroup\Airdrop\Tests\Drivers;
 
-use WilberGroup\Airdrop\Concerns\MakesDrivers;
-use WilberGroup\Airdrop\Tests\BaseTest;
-use WilberGroup\Airdrop\Triggers\FileTrigger;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use PHPUnit\Framework\Attributes\Test;
+use WilberGroup\Airdrop\Concerns\MakesDrivers;
+use WilberGroup\Airdrop\Tests\BaseTest;
+use WilberGroup\Airdrop\Triggers\FileTrigger;
 
 class FileSystemDriverTest extends BaseTest
 {
