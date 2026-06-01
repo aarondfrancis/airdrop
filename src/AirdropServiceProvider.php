@@ -6,12 +6,12 @@
 
 namespace WilberGroup\Airdrop;
 
+use Illuminate\Support\ServiceProvider;
 use WilberGroup\Airdrop\Commands\Debug;
 use WilberGroup\Airdrop\Commands\Download;
 use WilberGroup\Airdrop\Commands\Hash;
 use WilberGroup\Airdrop\Commands\Install;
 use WilberGroup\Airdrop\Commands\Upload;
-use Illuminate\Support\ServiceProvider;
 
 class AirdropServiceProvider extends ServiceProvider
 {

@@ -2,8 +2,8 @@
 
 namespace WilberGroup\Airdrop\Commands;
 
-use WilberGroup\Airdrop\Concerns\MakesDrivers;
 use Illuminate\Console\Command;
+use WilberGroup\Airdrop\Concerns\MakesDrivers;
 
 class Upload extends Command
 {

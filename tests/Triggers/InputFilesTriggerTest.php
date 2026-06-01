@@ -6,9 +6,9 @@
 
 namespace WilberGroup\Airdrop\Tests\Triggers;
 
+use PHPUnit\Framework\Attributes\Test;
 use WilberGroup\Airdrop\Tests\BaseTest;
 use WilberGroup\Airdrop\Triggers\FileTrigger;
-use PHPUnit\Framework\Attributes\Test;
 
 class InputFilesTriggerTest extends BaseTest
 {

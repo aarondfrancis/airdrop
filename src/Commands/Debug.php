@@ -6,9 +6,9 @@
 
 namespace WilberGroup\Airdrop\Commands;
 
-use WilberGroup\Airdrop\HashGenerator;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
+use WilberGroup\Airdrop\HashGenerator;
 
 class Debug extends Command
 {

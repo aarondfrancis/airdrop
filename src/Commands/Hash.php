@@ -6,8 +6,8 @@
 
 namespace WilberGroup\Airdrop\Commands;
 
-use WilberGroup\Airdrop\HashGenerator;
 use Illuminate\Console\Command;
+use WilberGroup\Airdrop\HashGenerator;
 
 class Hash extends Command
 {

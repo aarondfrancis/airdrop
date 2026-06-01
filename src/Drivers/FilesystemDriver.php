@@ -6,12 +6,14 @@
 
 namespace WilberGroup\Airdrop\Drivers;
 
-use WilberGroup\Airdrop\FileSelection;
 use Exception;
+use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use WilberGroup\Airdrop\FileSelection;
 use ZipArchive;
 
 class FilesystemDriver extends BaseDriver
@@ -108,7 +110,7 @@ class FilesystemDriver extends BaseDriver
         return true;
     }
 
-    public function files(): \Illuminate\Support\Collection
+    public function files(): Collection
     {
         $include = config('airdrop.outputs.include') ?? [];
         $exclude = config('airdrop.outputs.exclude') ?? [];
@@ -119,7 +121,7 @@ class FilesystemDriver extends BaseDriver
             ->selected();
     }
 
-    public function disk(): \Illuminate\Contracts\Filesystem\Filesystem
+    public function disk(): Filesystem
     {
         return Storage::disk($this->config['disk']);
     }
